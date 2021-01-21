@@ -1,0 +1,47 @@
+{
+  "$id": "https://schemas.ruter.no/adt/ota/api/v2.0/operational-information/current-block.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CurrentBlock",
+  "type": "object",
+  "required": [
+    "fromDateTime",
+    "state"
+  ],
+  "description": "Normally this topic indicates which block this vehicle is currently signed on to according to the backoffice or that it only assigned but not yet signed on or that it is not even assigned. This is usually a result of what was proposed by the driver on-board (see ruter/{PTO}/{vehicleID}/di/assignment_attempt/block) and then confirmed as valid by the back-office. It could also be based on an overriding decision enforced by the operation control centre.\n\n Note that if a ruter/{PTO}/{vehicleID}/di/assignment_attempt/block is not answered by the back-office within a configured duration it is assumed that contact is lost with the control centre and then the proposed block will be accepted and exposed on this topic.",
+  "additionalProperties": true,
+  "properties": {
+    "fromDateTime": {
+      "$id": "#/properties/fromDateTime",
+      "type": "string",
+      "description": "Time from which the sign on or assignment applies. ISO 8601, UTC."
+    },
+    "state": {
+      "$id": "#/properties/state",
+      "type": "string",
+      "description": "Possible values in examples.",
+      "examples": [
+        "SIGNED_ON",
+        "ASSIGNED",
+        "NOT_ASSIGNED"
+      ]
+    },
+    "blockRef": {
+      "$id": "#/properties/blockRef",
+      "type": "string",
+      "description": "Not provided if not assigned or not signed on, otherwise provided as a Block identifier."
+    },
+    "operatingDay": {
+      "$id": "#/properties/operatingDay",
+      "type": "string",
+      "description": "Not provided if not assigned, otherwise provided as the scheduled date of the block on the format “YYYY-MM-DD”. Maybe different from calendar date."
+    }
+  },
+  "examples": [
+    {
+      "fromDateTime": "2017-10-31T12:45:50+01:00",
+      "state": "SIGNED_ON",
+      "blockRef": "10023",
+      "operatingDay": "2017-10-31"
+    }
+  ]
+}
