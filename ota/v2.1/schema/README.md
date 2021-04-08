@@ -1,5 +1,4 @@
-# API v. 2.1 [Draft]
-> DISCLAIMER: This document is in it’s current form regarded as a draft. It will be finalized before the end of January 2021
+# API v. 2.1
 
 ## Overview
 This API description covers Ruter’s ADT agreement v2.1 [Ruter’s ADT agreement v2.1](https://ruter.atlassian.net/wiki/spaces/DS/pages/953483265 "https://ruter.atlassian.net/wiki/spaces/DS/pages/953483265"). The API describes a set of MQTT topics which are used to distribute data onboard public transport vehicles/vessels as well as between the vehicle/vessel and Ruter’s Back Office or vv.
