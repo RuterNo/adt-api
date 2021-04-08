@@ -1,0 +1,41 @@
+{
+  "$id": "https://schemas.ruter.no/adt/ota/api/v2.1/proprietary-extensions/doors-individually.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoorsIndividually",
+  "type": "object",
+  "required": [
+    "doorRef",
+    "isOpen",
+    "atDateTime"
+  ],
+  "description": "This topic is used to track the individual status of doors. One use case is to improve the data quality of APC counts. See also topic sensors/door for status of anyDoorOpen/allDoorsClosed.",
+  "additionalProperties": true,
+  "properties": {
+    "doorRef": {
+      "$id": "#/properties/doorRef",
+      "type": "string",
+      "description": "Has to be the same reference as is used in the topic sensors/apc_sensors."
+    },
+    "isOpen": {
+      "$id": "#/properties/isOpen",
+      "type": "boolean",
+      "description": "True if the door is open.",
+      "examples": [
+        "true",
+        "false"
+      ]
+    },
+    "atDateTime": {
+      "$id": "#/properties/atDateTime",
+      "type": "string",
+      "description": "Timestamp when isOpen has changed, ISO 8601"
+    }
+  },
+  "examples": [
+    {
+      "doorRef": "01",
+      "isOpen": true,
+      "atDateTime": "2021-10-31T12:45:50Z"
+    }
+  ]
+}

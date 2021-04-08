@@ -1,0 +1,47 @@
+{
+  "$id": "https://schemas.ruter.no/adt/ota/api/v2.1/extended-information/due-information.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DueInformation",
+  "description": "This topic provides an adapted text indicating that the vehicle is about to arrive at a stop according to what the coordinating application has concluded.\n\n This could optionally be based on information provided in real-time from a back-office AVMS. However, if contact is lost with the back-office for more than a configured duration the information should be based on local information.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "expiryDateTime",
+    "body"
+  ],
+  "properties": {
+    "expiryDateTime": {
+      "$id": "#/properties/expiryDateTime",
+      "type": "string",
+      "description": "Do not present this information after this time. ISO 8601, UTC"
+    },
+    "heading": {
+      "$id": "#/properties/heading",
+      "type": "string",
+      "description": "Optional. The heading to be displayed.",
+      "examples": [
+        "Arriving at"
+      ]
+    },
+    "body": {
+      "$id": "#/properties/body",
+      "type": "string",
+      "description": "The stop that the bus is approaching.",
+      "examples": [
+        "Broparken"
+      ]
+    },
+    "displayDurationSeconds": {
+      "$id": "#/properties/displayDurationSeconds",
+      "type": "number",
+      "description": "Optional. The recommended number of seconds the due information shall be presented. This value depends on the number of items and content type, reflecting the time it takes for a passenger to read it."
+    }
+  },
+  "examples": [
+    {
+      "expiryDateTime": "2017-10-31T12:45:50Z",
+      "heading": "Arriving at",
+      "body": "Broparken"
+    }
+  ]
+}

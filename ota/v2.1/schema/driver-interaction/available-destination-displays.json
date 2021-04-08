@@ -1,0 +1,48 @@
+{
+  "$id": "https://schemas.ruter.no/adt/ota/api/v2.1/driver-interaction/available-destination-displays.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AvailableDestinationDisplays",
+  "type": "object",
+  "required": [
+    "availableDestinationDisplays"
+  ],
+  "description": "",
+  "additionalProperties": true,
+  "properties": {
+    "availableDestinationDisplays": {
+      "$id": "#/properties/availableDestinationDisplays",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "number",
+          "name"
+        ],
+        "properties": {
+          "number": {
+            "type": "number",
+            "description": "Numeric value representing a destination display text."
+          },
+          "name": {
+            "type": "string",
+            "description": "A destination display text"
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "availableDestinationDisplays": [
+        {
+          "number": 12,
+          "name": "Airport"
+        },
+        {
+          "number": 112,
+          "name": "Bus full"
+        }
+      ]
+    }
+  ]
+}
