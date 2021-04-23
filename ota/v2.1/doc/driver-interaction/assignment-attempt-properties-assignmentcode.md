@@ -30,7 +30,7 @@ Attribute in use by Ruter only. Not part of ITxPT specification.
 ```
 
 ```json
-"CANCELED"
+"CANCELLED"
 ```
 
 ```json
