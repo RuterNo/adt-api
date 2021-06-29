@@ -2,7 +2,7 @@
  
 MQTT topic                                          | Retain   | QoS 
 | :------------------------------------------------ | -------- | -------- |
-```{PTO}/ruter/{vehicleID}/ei/expected_call/due_information/```  | ```false``` | ```0```
+```{PTO}/ruter/{vehicleID}/ei/due_information/```  | ```false``` | ```0```
 
 # DueInformation Schema
 

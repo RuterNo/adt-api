@@ -2,7 +2,7 @@
  
 MQTT topic                                          | Retain   | QoS 
 | :------------------------------------------------ | -------- | -------- |
-```{PTO}/ruter/{vehicleID}/ei/expected_call/transfer_information```  | ```true``` | ```1```
+```{PTO}/ruter/{vehicleID}/ei/transfer_information```  | ```true``` | ```1```
 
 # TransferInformation Schema
 

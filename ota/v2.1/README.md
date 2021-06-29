@@ -54,8 +54,8 @@ Schema                                | MQTT topic                              
 Schema                                | MQTT topic                                                               | Produced by | Consumed by 
 | :---------------------------------- | :----------------------------------------------------------------------- | ----------- | -------- |
 [Deviation information](./doc/extended-information/deviation-information.md) | ```{PTO}/ruter/{vehicleID}/ei/deviation_information/```  | Ruter Bo | Ruter Dpi
-[Transfer information](./doc/extended-information/transfer-information.md) | ```{PTO}/ruter/{vehicleID}/ei/expected_call/transfer_information```  | Ruter Bo | Ruter Dpi
-[Due information](./doc/extended-information/due-information.md) | ```{PTO}/ruter/{vehicleID}/ei/expected_call/due_information/```  | Ruter Bo | Ruter Dpi
+[Transfer information](./doc/extended-information/transfer-information.md) | ```{PTO}/ruter/{vehicleID}/ei/transfer_information```  | Ruter Bo | Ruter Dpi
+[Due information](./doc/extended-information/due-information.md) | ```{PTO}/ruter/{vehicleID}/ei/due_information/```  | Ruter Bo | Ruter Dpi
 [Audio message](./doc/extended-information/audio-message.md) | ```{PTO}/ruter/{vehicleID}/ei/audio_message```  | Ruter Bo | Ruter Dpi
 
  --- 

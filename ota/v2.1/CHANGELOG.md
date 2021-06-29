@@ -61,6 +61,7 @@ Added field `messageNumber`
 #### Location
 - Altered description∫
 - Added field `messageNumber`
+
 ### Operational Information
 #### Current Block
 Altered Description
@@ -70,10 +71,16 @@ Altered Description
 - Field `FeederConnections` changed to `feederConnections`
 - Field `Code`changed to `code`
 #### Current Destination Display
-- Field `text` changed to `namea
+- Field `text` changed to `name`
 
 #### Expected call
 Field `Code`changed to `code`
 ### Extended Information
 #### Audio Message
 Altered description
+
+## Extended Information
+### Due Information
+- Removed expected_call from MQTT-topic
+### Transfer Information
+- Removed expected_call from MQTT-topic

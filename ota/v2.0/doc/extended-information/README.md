@@ -8,10 +8,10 @@ These topics are intended for announcements of adapted passenger information. It
  
 Schema                                | MQTT topic                                                               | Produced by | Consumed by 
 | :---------------------------------- | :----------------------------------------------------------------------- | ----------- | -------- |
-[Deviation information](deviation-information.md) | ```{PTO}/ruter/{vehicleID}/ei/deviation_information/```  | ruter-bo | ruter-dpi
-[Transfer information](transfer-information.md) | ```{PTO}/ruter/{vehicleID}/ei/expected_call/transfer_information```  | ruter-bo | ruter-dpi
-[Due information](due-information.md) | ```{PTO}/ruter/{vehicleID}/ei/expected_call/due_information/```  | ruter-bo | ruter-dpi
-[Audio message](audio-message.md) | ```{PTO}/ruter/{vehicleID}/ei/audio_message```  | ruter-bo | ruter-dpi
+[Deviation information](deviation-information.md) | ```{PTO}/ruter/{vehicleID}/ei/deviation_information/```  | Ruter Bo | Ruter Dpi
+[Transfer information](transfer-information.md) | ```{PTO}/ruter/{vehicleID}/ei/transfer_information```  | Ruter Bo | Ruter Dpi
+[Due information](due-information.md) | ```{PTO}/ruter/{vehicleID}/ei/due_information/```  | Ruter Bo | Ruter Dpi
+[Audio message](audio-message.md) | ```{PTO}/ruter/{vehicleID}/ei/audio_message```  | Ruter Bo | Ruter Dpi
 
  --- 
 
