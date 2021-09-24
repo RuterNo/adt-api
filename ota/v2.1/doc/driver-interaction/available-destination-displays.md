@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/driver-interaction/available-destinati
 
 
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                        |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [available-destination-displays.json](../../schema/driver-interaction/available-destination-displays.json "open original schema") |
 
 ## AvailableDestinationDisplays Type
@@ -40,22 +39,24 @@ https://schemas.ruter.no/adt/ota/api/v2.1/driver-interaction/available-destinati
 
 # AvailableDestinationDisplays Properties
 
-| Property                                                      | Type    | Required | Nullable       | Defined by                                                                                                                                                                                      |
-| :------------------------------------------------------------ | ------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [availableDestinationDisplays](#availabledestinationdisplays) | `array` | Required | cannot be null | [AvailableDestinationDisplays](available-destination-displays-properties-availabledestinationdisplays.md "\#/properties/availableDestinationDisplays#/properties/availableDestinationDisplays") |
-| Additional Properties                                         | Any     | Optional | can be null    |                                                                                                                                                                                                 |
+| Property                                                      | Type    | Required | Nullable       | Defined by                                                                                                                                                                                     |
+| :------------------------------------------------------------ | :------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [availableDestinationDisplays](#availabledestinationdisplays) | `array` | Required | cannot be null | [AvailableDestinationDisplays](available-destination-displays-properties-availabledestinationdisplays.md "#/properties/availableDestinationDisplays#/properties/availableDestinationDisplays") |
+| Additional Properties                                         | Any     | Optional | can be null    |                                                                                                                                                                                                |
 
 ## availableDestinationDisplays
 
 
 
-
 `availableDestinationDisplays`
 
--   is required
--   Type: `object[]` ([Details](available-destination-displays-properties-availabledestinationdisplays-items.md))
--   cannot be null
--   defined in: [AvailableDestinationDisplays](available-destination-displays-properties-availabledestinationdisplays.md "\#/properties/availableDestinationDisplays#/properties/availableDestinationDisplays")
+*   is required
+
+*   Type: `object[]` ([Details](available-destination-displays-properties-availabledestinationdisplays-items.md))
+
+*   cannot be null
+
+*   defined in: [AvailableDestinationDisplays](available-destination-displays-properties-availabledestinationdisplays.md "#/properties/availableDestinationDisplays#/properties/availableDestinationDisplays")
 
 ### availableDestinationDisplays Type
 

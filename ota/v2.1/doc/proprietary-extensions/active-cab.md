@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/proprietary-extensions/active-cab.json
 
 Used to keep track of what direction the train is driving
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                    |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [active-cab.json](../../schema/proprietary-extensions/active-cab.json "open original schema") |
 
 ## ActiveCab Type
@@ -32,23 +31,25 @@ Used to keep track of what direction the train is driving
 
 # ActiveCab Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                     |
-| :-------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------- |
-| [eventTimestamp](#eventtimestamp) | `string` | Required | cannot be null | [ActiveCab](active-cab-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp") |
-| [activeCab](#activecab)           | `string` | Required | cannot be null | [ActiveCab](active-cab-properties-activecab.md "\#/properties/activeCab#/properties/activeCab")                |
-| Additional Properties             | Any      | Optional | can be null    |                                                                                                                |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                    |
+| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------ |
+| [eventTimestamp](#eventtimestamp) | `string` | Required | cannot be null | [ActiveCab](active-cab-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp") |
+| [activeCab](#activecab)           | `string` | Required | cannot be null | [ActiveCab](active-cab-properties-activecab.md "#/properties/activeCab#/properties/activeCab")                |
+| Additional Properties             | Any      | Optional | can be null    |                                                                                                               |
 
 ## eventTimestamp
 
 ISO 8601, UTC
 
-
 `eventTimestamp`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [ActiveCab](active-cab-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [ActiveCab](active-cab-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp")
 
 ### eventTimestamp Type
 
@@ -58,13 +59,15 @@ ISO 8601, UTC
 
 Text for active cab
 
-
 `activeCab`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [ActiveCab](active-cab-properties-activecab.md "\#/properties/activeCab#/properties/activeCab")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [ActiveCab](active-cab-properties-activecab.md "#/properties/activeCab#/properties/activeCab")
 
 ### activeCab Type
 

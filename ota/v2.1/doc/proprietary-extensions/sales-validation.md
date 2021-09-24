@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/proprietary-extensions/sales-validatio
 
 Submits status of RuterSales application in the vehicle. The status can be submitted both at a periodic interval and when a ticket is sold or validated.
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [sales-validation.json](../../schema/proprietary-extensions/sales-validation.json "open original schema") |
 
 ## SalesValidation Type
@@ -33,33 +32,35 @@ Submits status of RuterSales application in the vehicle. The status can be submi
 
 # SalesValidation Properties
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                             |
-| :---------------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
-| [status](#status)                         | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-status.md "\#/properties/status#/properties/status")                                     |
-| [validationOk](#validationok)             | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationok.md "\#/properties/validationOk#/properties/validationOk")                   |
-| [validationText](#validationtext)         | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationtext.md "\#/properties/validationText#/properties/validationText")             |
-| [validationColor](#validationcolor)       | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationcolor.md "\#/properties/validationColor#/properties/validationColor")          |
-| [validationSound](#validationsound)       | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationsound.md "\#/properties/validationSound#/properties/validationSound")          |
-| [nfcReaderConnected](#nfcreaderconnected) | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-nfcreaderconnected.md "\#/properties/nfcReaderConnected#/properties/nfcReaderConnected") |
-| [printerConnected](#printerconnected)     | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-printerconnected.md "\#/properties/printerConnected#/properties/printerConnected")       |
-| [printerStatus](#printerstatus)           | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-printerstatus.md "\#/properties/printerStatus#/properties/printerStatus")                |
-| [nodAvailable](#nodavailable)             | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-nodavailable.md "\#/properties/nodAvailable#/properties/nodAvailable")                   |
-| [sapiAvailable](#sapiavailable)           | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-sapiavailable.md "\#/properties/sapiAvailable#/properties/sapiAvailable")                |
-| [loggedIn](#loggedin)                     | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-loggedin.md "\#/properties/loggedIn#/properties/loggedIn")                               |
-| [atDateTime](#atdatetime)                 | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")                         |
-| Additional Properties                     | Any      | Optional | can be null    |                                                                                                                                        |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                            |
+| :---------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| [status](#status)                         | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-status.md "#/properties/status#/properties/status")                                     |
+| [validationOk](#validationok)             | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationok.md "#/properties/validationOk#/properties/validationOk")                   |
+| [validationText](#validationtext)         | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationtext.md "#/properties/validationText#/properties/validationText")             |
+| [validationColor](#validationcolor)       | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationcolor.md "#/properties/validationColor#/properties/validationColor")          |
+| [validationSound](#validationsound)       | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-validationsound.md "#/properties/validationSound#/properties/validationSound")          |
+| [nfcReaderConnected](#nfcreaderconnected) | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-nfcreaderconnected.md "#/properties/nfcReaderConnected#/properties/nfcReaderConnected") |
+| [printerConnected](#printerconnected)     | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-printerconnected.md "#/properties/printerConnected#/properties/printerConnected")       |
+| [printerStatus](#printerstatus)           | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-printerstatus.md "#/properties/printerStatus#/properties/printerStatus")                |
+| [nodAvailable](#nodavailable)             | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-nodavailable.md "#/properties/nodAvailable#/properties/nodAvailable")                   |
+| [sapiAvailable](#sapiavailable)           | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-sapiavailable.md "#/properties/sapiAvailable#/properties/sapiAvailable")                |
+| [loggedIn](#loggedin)                     | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-loggedin.md "#/properties/loggedIn#/properties/loggedIn")                               |
+| [atDateTime](#atdatetime)                 | `string` | Optional | cannot be null | [SalesValidation](sales-validation-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")                         |
+| Additional Properties                     | Any      | Optional | can be null    |                                                                                                                                       |
 
 ## status
 
 Status
 
-
 `status`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-status.md "\#/properties/status#/properties/status")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-status.md "#/properties/status#/properties/status")
 
 ### status Type
 
@@ -79,13 +80,15 @@ Status
 
 True if validation is positive
 
-
 `validationOk`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-validationok.md "\#/properties/validationOk#/properties/validationOk")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-validationok.md "#/properties/validationOk#/properties/validationOk")
 
 ### validationOk Type
 
@@ -105,13 +108,15 @@ True if validation is positive
 
 Text result from NOD
 
-
 `validationText`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-validationtext.md "\#/properties/validationText#/properties/validationText")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-validationtext.md "#/properties/validationText#/properties/validationText")
 
 ### validationText Type
 
@@ -121,13 +126,15 @@ Text result from NOD
 
 Color result from NOD
 
-
 `validationColor`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-validationcolor.md "\#/properties/validationColor#/properties/validationColor")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-validationcolor.md "#/properties/validationColor#/properties/validationColor")
 
 ### validationColor Type
 
@@ -137,13 +144,15 @@ Color result from NOD
 
 Sound result from NOD
 
-
 `validationSound`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-validationsound.md "\#/properties/validationSound#/properties/validationSound")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-validationsound.md "#/properties/validationSound#/properties/validationSound")
 
 ### validationSound Type
 
@@ -153,13 +162,15 @@ Sound result from NOD
 
 True if NFC reader is connected
 
-
 `nfcReaderConnected`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-nfcreaderconnected.md "\#/properties/nfcReaderConnected#/properties/nfcReaderConnected")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-nfcreaderconnected.md "#/properties/nfcReaderConnected#/properties/nfcReaderConnected")
 
 ### nfcReaderConnected Type
 
@@ -179,13 +190,15 @@ True if NFC reader is connected
 
 True if last connection attempt/print was successful
 
-
 `printerConnected`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-printerconnected.md "\#/properties/printerConnected#/properties/printerConnected")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-printerconnected.md "#/properties/printerConnected#/properties/printerConnected")
 
 ### printerConnected Type
 
@@ -205,13 +218,15 @@ True if last connection attempt/print was successful
 
 Latest status from printer if printerConnected is false
 
-
 `printerStatus`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-printerstatus.md "\#/properties/printerStatus#/properties/printerStatus")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-printerstatus.md "#/properties/printerStatus#/properties/printerStatus")
 
 ### printerStatus Type
 
@@ -221,13 +236,15 @@ Latest status from printer if printerConnected is false
 
 True if app is able to reach NOD
 
-
 `nodAvailable`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-nodavailable.md "\#/properties/nodAvailable#/properties/nodAvailable")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-nodavailable.md "#/properties/nodAvailable#/properties/nodAvailable")
 
 ### nodAvailable Type
 
@@ -247,13 +264,15 @@ True if app is able to reach NOD
 
 True if app is able to reach sapi
 
-
 `sapiAvailable`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-sapiavailable.md "\#/properties/sapiAvailable#/properties/sapiAvailable")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-sapiavailable.md "#/properties/sapiAvailable#/properties/sapiAvailable")
 
 ### sapiAvailable Type
 
@@ -273,13 +292,15 @@ True if app is able to reach sapi
 
 True if a user currently is logged in
 
-
 `loggedIn`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-loggedin.md "\#/properties/loggedIn#/properties/loggedIn")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-loggedin.md "#/properties/loggedIn#/properties/loggedIn")
 
 ### loggedIn Type
 
@@ -299,13 +320,15 @@ True if a user currently is logged in
 
 When the ticket is sold/validated or the timestamp for periodic reporting e.g. 1/min.
 
-
 `atDateTime`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [SalesValidation](sales-validation-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [SalesValidation](sales-validation-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")
 
 ### atDateTime Type
 

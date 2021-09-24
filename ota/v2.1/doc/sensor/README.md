@@ -10,8 +10,8 @@ Schema                                | MQTT topic                              
 [Location](location.md) | ```ruter/{PTO}/{vehicleID}/sensors/gnss/location```  | Vehicle | Ruter Bo
 [Odometer](odometer.md) | ```ruter/{PTO}/{vehicleID}/sensors/odometer```  | Vehicle | Ruter Bo
 [Clock](clock.md) | ```sensors/clock```  | Vehicle | Vehicle, Ruter Sales
-[Apc sensors](apc-sensors.md) | ```ruter/{PTO}/{vehicleID}/sensors/apc_sensors```  | Vehicle | Ruter Bo
-[Telemetry](telemetry.md) | ```ruter/{PTO}/{vehicleID}/sensors/telemetry```  | Vehicle | Ruter Bo
+[Apc sensors](apc-sensors.md) | ```ruter/{PTO}/{vehicleID}/sensors/apc_sensors/{sensorID}```  | Vehicle | Ruter Bo
+[Telemetry](telemetry.md) | ```ruter/{PTO}/{vehicleID}/sensors/telemetry/{sensorID}```  | Vehicle | Ruter Bo
 
  --- 
 

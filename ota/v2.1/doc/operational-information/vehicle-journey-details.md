@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journe
 
 This topic provides the details of the current (monitored) vehicle journey. If there is no ongoing vehicle journey, this topic will provide the details of the coming vehicle journey. The information should reflect the latest production plan including any applied control actions as known in the back-office. Note however that this does not include neither estimated nor observed times at the different stops. This information is instead provided on the topic ruter/{PTO}/{vehicleID}/oi/current_vehicle_journey/expected_call The topic should be blanked (provided as a retained message with a zero-byte payload) if the vehicle has left the last stop and the next vehicle journey is not known
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                               |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------- |
 | Can be instantiated | Yes        | Unknown status | No           | Forbidden         | Allowed               | none                | [vehicle-journey-details.json](../../schema/operational-information/vehicle-journey-details.json "open original schema") |
 
 ## VehicleJourneyDetails Type
@@ -274,35 +273,37 @@ This topic provides the details of the current (monitored) vehicle journey. If t
 
 # VehicleJourneyDetails Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                      |
-| :------------------------------------------------ | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [operatingDayDate](#operatingdaydate)             | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-operatingdaydate.md "\#/properties/operatingDayDate#/properties/operatingDayDate")                   |
-| [vehicleJourneyRef](#vehiclejourneyref)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-vehiclejourneyref.md "\#/properties/vehicleJourneyRef#/properties/vehicleJourneyRef")                |
-| [journeyNumber](#journeynumber)                   | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-journeynumber.md "\#/properties/journeyNumber#/properties/journeyNumber")                            |
-| [journeyPatternRef](#journeypatternref)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-journeypatternref.md "\#/properties/journeyPatternRef#/properties/journeyPatternRef")                |
-| [timedJourneyPatternRef](#timedjourneypatternref) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-timedjourneypatternref.md "\#/properties/timedJourneyPatternRef#/properties/timedJourneyPatternRef") |
-| [transportModeCode](#transportmodecode)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-transportmodecode.md "\#/properties/transportModeCode#/properties/transportModeCode")                |
-| [transportAuthority](#transportauthority)         | `object` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info.md "\#/properties/transportAuthority#/properties/transportAuthority")              |
-| [contractor](#contractor)                         | `object` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info-1.md "\#/properties/contractor#/properties/contractor")                            |
-| [plannedStartDateTime](#plannedstartdatetime)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-plannedstartdatetime.md "\#/properties/plannedStartDateTime#/properties/plannedStartDateTime")       |
-| [plannedEndDateTime](#plannedenddatetime)         | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-plannedenddatetime.md "\#/properties/plannedEndDateTime#/properties/plannedEndDateTime")             |
-| [origin](#origin)                                 | `object` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-place.md "\#/properties/origin#/properties/origin")                                                  |
-| [line](#line)                                     | `object` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-line-info.md "\#/properties/line#/properties/line")                                                  |
-| [directionOfLine](#directionofline)               | `object` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-direction-of-line-info.md "\#/properties/directionOfLine#/properties/directionOfLine")               |
-| [calls](#calls)                                   | `array`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-calls.md "\#/properties/calls#/properties/calls")                                                    |
-| Additional Properties                             | Any      | Optional | can be null    |                                                                                                                                                                 |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                     |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [operatingDayDate](#operatingdaydate)             | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-operatingdaydate.md "#/properties/operatingDayDate#/properties/operatingDayDate")                   |
+| [vehicleJourneyRef](#vehiclejourneyref)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-vehiclejourneyref.md "#/properties/vehicleJourneyRef#/properties/vehicleJourneyRef")                |
+| [journeyNumber](#journeynumber)                   | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-journeynumber.md "#/properties/journeyNumber#/properties/journeyNumber")                            |
+| [journeyPatternRef](#journeypatternref)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-journeypatternref.md "#/properties/journeyPatternRef#/properties/journeyPatternRef")                |
+| [timedJourneyPatternRef](#timedjourneypatternref) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-timedjourneypatternref.md "#/properties/timedJourneyPatternRef#/properties/timedJourneyPatternRef") |
+| [transportModeCode](#transportmodecode)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-transportmodecode.md "#/properties/transportModeCode#/properties/transportModeCode")                |
+| [transportAuthority](#transportauthority)         | `object` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info.md "#/properties/transportAuthority#/properties/transportAuthority")              |
+| [contractor](#contractor)                         | `object` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info-1.md "#/properties/contractor#/properties/contractor")                            |
+| [plannedStartDateTime](#plannedstartdatetime)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-plannedstartdatetime.md "#/properties/plannedStartDateTime#/properties/plannedStartDateTime")       |
+| [plannedEndDateTime](#plannedenddatetime)         | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-plannedenddatetime.md "#/properties/plannedEndDateTime#/properties/plannedEndDateTime")             |
+| [origin](#origin)                                 | `object` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-place.md "#/properties/origin#/properties/origin")                                                  |
+| [line](#line)                                     | `object` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-line-info.md "#/properties/line#/properties/line")                                                  |
+| [directionOfLine](#directionofline)               | `object` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-direction-of-line-info.md "#/properties/directionOfLine#/properties/directionOfLine")               |
+| [calls](#calls)                                   | `array`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-properties-calls.md "#/properties/calls#/properties/calls")                                                    |
+| Additional Properties                             | Any      | Optional | can be null    |                                                                                                                                                                |
 
 ## operatingDayDate
 
 The scheduled date of the journey.
 
-
 `operatingDayDate`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-operatingdaydate.md "\#/properties/operatingDayDate#/properties/operatingDayDate")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-operatingdaydate.md "#/properties/operatingDayDate#/properties/operatingDayDate")
 
 ### operatingDayDate Type
 
@@ -312,13 +313,15 @@ The scheduled date of the journey.
 
 A Vehicle Journey identifier.
 
-
 `vehicleJourneyRef`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-vehiclejourneyref.md "\#/properties/vehicleJourneyRef#/properties/vehicleJourneyRef")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-vehiclejourneyref.md "#/properties/vehicleJourneyRef#/properties/vehicleJourneyRef")
 
 ### vehicleJourneyRef Type
 
@@ -328,13 +331,15 @@ A Vehicle Journey identifier.
 
 The journey number. May describe a part of the vehicleJourneyRef that should be interpreted in scope of a certain line or an operator.
 
-
 `journeyNumber`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-journeynumber.md "\#/properties/journeyNumber#/properties/journeyNumber")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-journeynumber.md "#/properties/journeyNumber#/properties/journeyNumber")
 
 ### journeyNumber Type
 
@@ -344,13 +349,15 @@ The journey number. May describe a part of the vehicleJourneyRef that should be 
 
 A unique identifier for the original journey pattern. E.g. 16-digit ID.
 
-
 `journeyPatternRef`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-journeypatternref.md "\#/properties/journeyPatternRef#/properties/journeyPatternRef")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-journeypatternref.md "#/properties/journeyPatternRef#/properties/journeyPatternRef")
 
 ### journeyPatternRef Type
 
@@ -360,13 +367,15 @@ A unique identifier for the original journey pattern. E.g. 16-digit ID.
 
 Optional. Identifier for a journey pattern with a unique timing pattern. Format to be agreed.
 
-
 `timedJourneyPatternRef`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-timedjourneypatternref.md "\#/properties/timedJourneyPatternRef#/properties/timedJourneyPatternRef")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-timedjourneypatternref.md "#/properties/timedJourneyPatternRef#/properties/timedJourneyPatternRef")
 
 ### timedJourneyPatternRef Type
 
@@ -376,13 +385,15 @@ Optional. Identifier for a journey pattern with a unique timing pattern. Format 
 
 The transport mode.
 
-
 `transportModeCode`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-transportmodecode.md "\#/properties/transportModeCode#/properties/transportModeCode")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-transportmodecode.md "#/properties/transportModeCode#/properties/transportModeCode")
 
 ### transportModeCode Type
 
@@ -402,13 +413,15 @@ The transport mode.
 
 Information about the transport authority that provides the journey.
 
-
 `transportAuthority`
 
--   is required
--   Type: `object` ([Organisation Info](vehicle-journey-details-properties-organisation-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info.md "\#/properties/transportAuthority#/properties/transportAuthority")
+*   is required
+
+*   Type: `object` ([Organisation Info](vehicle-journey-details-properties-organisation-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info.md "#/properties/transportAuthority#/properties/transportAuthority")
 
 ### transportAuthority Type
 
@@ -418,13 +431,15 @@ Information about the transport authority that provides the journey.
 
 Optional. Information about the operator that is contracted to operate the journey.
 
-
 `contractor`
 
--   is optional
--   Type: `object` ([Organisation Info](vehicle-journey-details-properties-organisation-info-1.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info-1.md "\#/properties/contractor#/properties/contractor")
+*   is optional
+
+*   Type: `object` ([Organisation Info](vehicle-journey-details-properties-organisation-info-1.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-organisation-info-1.md "#/properties/contractor#/properties/contractor")
 
 ### contractor Type
 
@@ -434,13 +449,15 @@ Optional. Information about the operator that is contracted to operate the journ
 
 The date and time when the journey is planned to start. ISO 8601, UTC.
 
-
 `plannedStartDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-plannedstartdatetime.md "\#/properties/plannedStartDateTime#/properties/plannedStartDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-plannedstartdatetime.md "#/properties/plannedStartDateTime#/properties/plannedStartDateTime")
 
 ### plannedStartDateTime Type
 
@@ -450,13 +467,15 @@ The date and time when the journey is planned to start. ISO 8601, UTC.
 
 The date and time when the journey is planned to end. ISO 8601, UTC.
 
-
 `plannedEndDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-plannedenddatetime.md "\#/properties/plannedEndDateTime#/properties/plannedEndDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-plannedenddatetime.md "#/properties/plannedEndDateTime#/properties/plannedEndDateTime")
 
 ### plannedEndDateTime Type
 
@@ -466,13 +485,15 @@ The date and time when the journey is planned to end. ISO 8601, UTC.
 
 The place where the journey comes from.
 
-
 `origin`
 
--   is required
--   Type: `object` ([Place](vehicle-journey-details-properties-place.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-place.md "\#/properties/origin#/properties/origin")
+*   is required
+
+*   Type: `object` ([Place](vehicle-journey-details-properties-place.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-place.md "#/properties/origin#/properties/origin")
 
 ### origin Type
 
@@ -482,13 +503,15 @@ The place where the journey comes from.
 
 Optional. Only provided for service journeys. Information about the journey’s line.
 
-
 `line`
 
--   is optional
--   Type: `object` ([Line Info](vehicle-journey-details-properties-line-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-line-info.md "\#/properties/line#/properties/line")
+*   is optional
+
+*   Type: `object` ([Line Info](vehicle-journey-details-properties-line-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-line-info.md "#/properties/line#/properties/line")
 
 ### line Type
 
@@ -498,13 +521,15 @@ Optional. Only provided for service journeys. Information about the journey’s 
 
 Optional. Only provided for service journeys. Information about the journey’s direction on the line.
 
-
 `directionOfLine`
 
--   is optional
--   Type: `object` ([Direction Of Line Info](vehicle-journey-details-properties-direction-of-line-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-direction-of-line-info.md "\#/properties/directionOfLine#/properties/directionOfLine")
+*   is optional
+
+*   Type: `object` ([Direction Of Line Info](vehicle-journey-details-properties-direction-of-line-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-direction-of-line-info.md "#/properties/directionOfLine#/properties/directionOfLine")
 
 ### directionOfLine Type
 
@@ -514,13 +539,15 @@ Optional. Only provided for service journeys. Information about the journey’s 
 
 Points that shall be called at during the journey. At least two items.
 
-
 `calls`
 
--   is required
--   Type: unknown\[]
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-calls.md "\#/properties/calls#/properties/calls")
+*   is required
+
+*   Type: unknown\[]
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-properties-calls.md "#/properties/calls#/properties/calls")
 
 ### calls Type
 
@@ -540,24 +567,26 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo"}
 ```
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                          |
-| :-------------------------- | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ref](#ref)                 | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/ref")                 |
-| [designation](#designation) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-designation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/designation") |
-| [number](#number)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-number.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/number")           |
-| [name](#name)               | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/name")               |
+| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
+| :-------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ref](#ref)                 | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/ref")                 |
+| [designation](#designation) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-designation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/designation") |
+| [number](#number)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-number.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/number")           |
+| [name](#name)               | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/name")               |
 
 ### ref
 
 Optional. Only provided for service journeys. Information about the journey’s line.
 
-
 `ref`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/ref")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/ref")
 
 #### ref Type
 
@@ -567,13 +596,15 @@ Optional. Only provided for service journeys. Information about the journey’s 
 
 The public line number displayed to passengers. Note: this value can be alphanumeric!
 
-
 `designation`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-designation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/designation")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-designation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/designation")
 
 #### designation Type
 
@@ -583,13 +614,15 @@ The public line number displayed to passengers. Note: this value can be alphanum
 
 Technical line number.
 
-
 `number`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-number.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/number")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-number.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/number")
 
 #### number Type
 
@@ -599,13 +632,15 @@ Technical line number.
 
 Optional. Name of line.
 
-
 `name`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/name")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-line-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/lineInfo/properties/name")
 
 #### name Type
 
@@ -619,22 +654,24 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo"}
 ```
 
-| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
-| :-------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [code](#code)   | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-code.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/code") |
-| [name](#name-1) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/name") |
+| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
+| :-------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [code](#code)   | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-code.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/code") |
+| [name](#name-1) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/name") |
 
 ### code
 
 A value that is unique per direction.
 
-
 `code`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-code.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/code")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-code.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/code")
 
 #### code Type
 
@@ -654,13 +691,15 @@ A value that is unique per direction.
 
 Optional. Name of direction.
 
-
 `name`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/name")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-direction-of-line-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/directionOfLineInfo/properties/name")
 
 #### name Type
 
@@ -674,22 +713,24 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place"}
 ```
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
-| :---------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [name](#name-2)         | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/name")           |
-| [shortName](#shortname) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/shortName") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                          |
+| :---------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name-2)         | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/name")           |
+| [shortName](#shortname) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/shortName") |
 
 ### name
 
 Optional. Name of the origin.
 
-
 `name`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/name")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/name")
 
 #### name Type
 
@@ -699,13 +740,15 @@ Optional. Name of the origin.
 
 Optional. Short name of the origin.
 
-
 `shortName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/shortName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-place-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/place/properties/shortName")
 
 #### shortName Type
 
@@ -719,26 +762,28 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay"}
 ```
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                |
-| :-------------------------------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [productName](#productname)                   | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-productname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/productName")                   |
-| [symbolName](#symbolname)                     | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-symbolname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/symbolName")                     |
-| [lineDesignation](#linedesignation)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-linedesignation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/lineDesignation")           |
-| [primaryDestination](#primarydestination)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-primarydestination.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/primaryDestination")     |
-| [secondaryDestination](#secondarydestination) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-secondarydestination.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/secondaryDestination") |
-| [displayKeys](#displaykeys)                   | `array`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-displaykeys.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/displayKeys")                   |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                           |
+| :-------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [productName](#productname)                   | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-productname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/productName")                   |
+| [symbolName](#symbolname)                     | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-symbolname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/symbolName")                     |
+| [lineDesignation](#linedesignation)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-linedesignation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/lineDesignation")           |
+| [primaryDestination](#primarydestination)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-primarydestination.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/primaryDestination")     |
+| [secondaryDestination](#secondarydestination) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-secondarydestination.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/secondaryDestination") |
+| [displayKeys](#displaykeys)                   | `array`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-displaykeys.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/displayKeys")                   |
 
 ### productName
 
 Optional. Name of public transport product.
 
-
 `productName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-productname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/productName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-productname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/productName")
 
 #### productName Type
 
@@ -748,13 +793,15 @@ Optional. Name of public transport product.
 
 Optional. Controls any symbols in display.
 
-
 `symbolName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-symbolname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/symbolName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-symbolname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/symbolName")
 
 #### symbolName Type
 
@@ -764,13 +811,15 @@ Optional. Controls any symbols in display.
 
 Displayed line number.
 
-
 `lineDesignation`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-linedesignation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/lineDesignation")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-linedesignation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/lineDesignation")
 
 #### lineDesignation Type
 
@@ -780,13 +829,15 @@ Displayed line number.
 
 Names of primary destination.
 
-
 `primaryDestination`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-primarydestination.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/primaryDestination")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-primarydestination.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/primaryDestination")
 
 #### primaryDestination Type
 
@@ -796,13 +847,15 @@ Names of primary destination.
 
 Optional. Names of secondary destination.
 
-
 `secondaryDestination`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-secondarydestination.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/secondaryDestination")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-secondarydestination.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/secondaryDestination")
 
 #### secondaryDestination Type
 
@@ -812,13 +865,15 @@ Optional. Names of secondary destination.
 
 Optional. Contains device specific information such as sign codes etcetera. See 5.6.20. A numeric sign code representing the combined destination display information could thus be provided in a contained key with appropriate parameterData. E.g. “Destination=659” It is possible to provide information for multiple display devices in parallel if there is a mixed fleet with different hardware by providing multiple Keys in parallel. E.g. one Key with "deviceName": "SIGN_X" and another Key with "deviceName": "SIGN_Y".
 
-
 `displayKeys`
 
--   is optional
--   Type: `object[]` ([Key](vehicle-journey-details-definitions-destination-display-properties-displaykeys-key.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-displaykeys.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/displayKeys")
+*   is optional
+
+*   Type: `object[]` ([Key](vehicle-journey-details-definitions-destination-display-properties-displaykeys-key.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display-properties-displaykeys.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/destinationDisplay/properties/displayKeys")
 
 #### displayKeys Type
 
@@ -832,22 +887,24 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination"}
 ```
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
-| :------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [name](#name-3)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/name")           |
-| [shortName](#shortname-1) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/shortName") |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
+| :------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name-3)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/name")           |
+| [shortName](#shortname-1) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/shortName") |
 
 ### name
 
 Name of the destination.
 
-
 `name`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/name")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/name")
 
 #### name Type
 
@@ -857,13 +914,15 @@ Name of the destination.
 
 Optional. Short name of the destination.
 
-
 `shortName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/shortName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-primary-destination-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/primaryDestination/properties/shortName")
 
 #### shortName Type
 
@@ -877,23 +936,25 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination"}
 ```
 
-| Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                            |
-| :---------------------------------------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [name](#name-4)                                       | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/name")                                         |
-| [shortName](#shortname-2)                             | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/shortName")                               |
-| [secondaryDestinationType](#secondarydestinationtype) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-secondarydestinationtype.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/secondaryDestinationType") |
+| Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                       |
+| :---------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name-4)                                       | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/name")                                         |
+| [shortName](#shortname-2)                             | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/shortName")                               |
+| [secondaryDestinationType](#secondarydestinationtype) | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-secondarydestinationtype.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/secondaryDestinationType") |
 
 ### name
 
 Optional. Name of the destination.
 
-
 `name`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/name")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/name")
 
 #### name Type
 
@@ -903,13 +964,15 @@ Optional. Name of the destination.
 
 Optional. Short name of the destination.
 
-
 `shortName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/shortName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/shortName")
 
 #### shortName Type
 
@@ -919,13 +982,15 @@ Optional. Short name of the destination.
 
 Optional. The meaning of the secondary destination.
 
-
 `secondaryDestinationType`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-secondarydestinationtype.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/secondaryDestinationType")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-secondary-destination-properties-secondarydestinationtype.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/secondaryDestination/properties/secondaryDestinationType")
 
 #### secondaryDestinationType Type
 
@@ -939,33 +1004,35 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall"}
 ```
 
-| Property                                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                             |
-| :---------------------------------------------------------- | --------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sequenceNumber](#sequencenumber)                           | `number`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-sequencenumber.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/sequenceNumber")                            |
-| [journeyPatternPoint](#journeypatternpoint)                 | `object`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/journeyPatternPoint")           |
-| [stopArea](#stoparea)                                       | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopArea")                                  |
-| [stopPoint](#stoppoint)                                     | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopPoint")                                |
-| [arrival](#arrival)                                         | `object`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-arrival.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/arrival")                                          |
-| [departure](#departure)                                     | `object`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-departure.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/departure")                                      |
-| [destinationDisplay](#destinationdisplay)                   | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/destinationDisplay")                                         |
-| [isCancelledCall](#iscancelledcall)                         | `boolean` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-iscancelledcall.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/isCancelledCall")                          |
-| [replacedJourneyPatternPoint](#replacedjourneypatternpoint) | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info-1.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedJourneyPatternPoint") |
-| [replacedStopArea](#replacedstoparea)                       | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info-1.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopArea")                        |
-| [replacedStopPoint](#replacedstoppoint)                     | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info-1.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopPoint")                      |
-| [fetcherConnections](#fetcherconnections)                   | `array`   | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-fetcherconnections.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/fetcherConnections")                    |
-| [feederConnections](#feederconnections)                     | `array`   | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-feederconnections.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/feederConnections")                      |
+| Property                                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
+| :---------------------------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sequenceNumber](#sequencenumber)                           | `number`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-sequencenumber.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/sequenceNumber")                            |
+| [journeyPatternPoint](#journeypatternpoint)                 | `object`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/journeyPatternPoint")           |
+| [stopArea](#stoparea)                                       | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopArea")                                  |
+| [stopPoint](#stoppoint)                                     | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopPoint")                                |
+| [arrival](#arrival)                                         | `object`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-arrival.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/arrival")                                          |
+| [departure](#departure)                                     | `object`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-departure.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/departure")                                      |
+| [destinationDisplay](#destinationdisplay)                   | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/destinationDisplay")                                         |
+| [isCancelledCall](#iscancelledcall)                         | `boolean` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-iscancelledcall.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/isCancelledCall")                          |
+| [replacedJourneyPatternPoint](#replacedjourneypatternpoint) | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info-1.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedJourneyPatternPoint") |
+| [replacedStopArea](#replacedstoparea)                       | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info-1.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopArea")                        |
+| [replacedStopPoint](#replacedstoppoint)                     | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info-1.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopPoint")                      |
+| [fetcherConnections](#fetcherconnections)                   | `array`   | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-fetcherconnections.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/fetcherConnections")                    |
+| [feederConnections](#feederconnections)                     | `array`   | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-feederconnections.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/feederConnections")                      |
 
 ### sequenceNumber
 
 The order of the call on the vehicle journey. Increasing. Note that the numbering can start with a higher number than 1 and that there might be holes in the sequence numbering as not expected calls are excluded.
 
-
 `sequenceNumber`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-sequencenumber.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/sequenceNumber")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-sequencenumber.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/sequenceNumber")
 
 #### sequenceNumber Type
 
@@ -975,13 +1042,15 @@ The order of the call on the vehicle journey. Increasing. Note that the numberin
 
 The point to call. (May be updated in real time).
 
-
 `journeyPatternPoint`
 
--   is required
--   Type: `object` ([Journey Pattern Point Info](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/journeyPatternPoint")
+*   is required
+
+*   Type: `object` ([Journey Pattern Point Info](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/journeyPatternPoint")
 
 #### journeyPatternPoint Type
 
@@ -991,13 +1060,15 @@ The point to call. (May be updated in real time).
 
 Optional. The stop area of the call. (May be updated in real time).
 
-
 `stopArea`
 
--   is optional
--   Type: `object` ([Stop Area Info](vehicle-journey-details-definitions-point-call-properties-stop-area-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopArea")
+*   is optional
+
+*   Type: `object` ([Stop Area Info](vehicle-journey-details-definitions-point-call-properties-stop-area-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopArea")
 
 #### stopArea Type
 
@@ -1007,13 +1078,15 @@ Optional. The stop area of the call. (May be updated in real time).
 
 Optional. The stop point of the call. (May be updated in real time).
 
-
 `stopPoint`
 
--   is optional
--   Type: `object` ([Stop Point Info](vehicle-journey-details-definitions-point-call-properties-stop-point-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopPoint")
+*   is optional
+
+*   Type: `object` ([Stop Point Info](vehicle-journey-details-definitions-point-call-properties-stop-point-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/stopPoint")
 
 #### stopPoint Type
 
@@ -1023,13 +1096,15 @@ Optional. The stop point of the call. (May be updated in real time).
 
 
 
-
 `arrival`
 
--   is required
--   Type: `object` ([Arrival](vehicle-journey-details-definitions-point-call-properties-arrival.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-arrival.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/arrival")
+*   is required
+
+*   Type: `object` ([Arrival](vehicle-journey-details-definitions-point-call-properties-arrival.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-arrival.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/arrival")
 
 #### arrival Type
 
@@ -1039,13 +1114,15 @@ Optional. The stop point of the call. (May be updated in real time).
 
 
 
-
 `departure`
 
--   is required
--   Type: `object` ([Departure](vehicle-journey-details-definitions-point-call-properties-departure.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-departure.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/departure")
+*   is required
+
+*   Type: `object` ([Departure](vehicle-journey-details-definitions-point-call-properties-departure.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-departure.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/departure")
 
 #### departure Type
 
@@ -1055,13 +1132,15 @@ Optional. The stop point of the call. (May be updated in real time).
 
 Optional.
 
-
 `destinationDisplay`
 
--   is optional
--   Type: `object` ([Destination Display](vehicle-journey-details-definitions-destination-display.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/destinationDisplay")
+*   is optional
+
+*   Type: `object` ([Destination Display](vehicle-journey-details-definitions-destination-display.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-destination-display.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/destinationDisplay")
 
 #### destinationDisplay Type
 
@@ -1071,13 +1150,15 @@ Optional.
 
 Optional. Only provided if true. Boolean that indicates if this is call is cancelled without being replaced. In this case the call to the above-mentioned stop should be presented as cancelled.
 
-
 `isCancelledCall`
 
--   is optional
--   Type: `boolean`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-iscancelledcall.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/isCancelledCall")
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-iscancelledcall.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/isCancelledCall")
 
 #### isCancelledCall Type
 
@@ -1097,13 +1178,15 @@ Optional. Only provided if true. Boolean that indicates if this is call is cance
 
 Optional. Only provided if the original Journey Pattern Point is replaced. Describes the replaced point. Represents the original (planned) information.
 
-
 `replacedJourneyPatternPoint`
 
--   is optional
--   Type: `object` ([Journey Pattern Point Info](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info-1.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info-1.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedJourneyPatternPoint")
+*   is optional
+
+*   Type: `object` ([Journey Pattern Point Info](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info-1.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-journey-pattern-point-info-1.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedJourneyPatternPoint")
 
 #### replacedJourneyPatternPoint Type
 
@@ -1113,13 +1196,15 @@ Optional. Only provided if the original Journey Pattern Point is replaced. Descr
 
 Optional. Only present if the original StopArea is replaced. Describes the replaced stop area. Represents the original (planned) information.
 
-
 `replacedStopArea`
 
--   is optional
--   Type: `object` ([Stop Area Info](vehicle-journey-details-definitions-point-call-properties-stop-area-info-1.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info-1.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopArea")
+*   is optional
+
+*   Type: `object` ([Stop Area Info](vehicle-journey-details-definitions-point-call-properties-stop-area-info-1.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-area-info-1.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopArea")
 
 #### replacedStopArea Type
 
@@ -1129,13 +1214,15 @@ Optional. Only present if the original StopArea is replaced. Describes the repla
 
 Optional. Only present if the original StopPoint is replaced. Describes the replaced stop point. Represents the original (planned) information.
 
-
 `replacedStopPoint`
 
--   is optional
--   Type: `object` ([Stop Point Info](vehicle-journey-details-definitions-point-call-properties-stop-point-info-1.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info-1.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopPoint")
+*   is optional
+
+*   Type: `object` ([Stop Point Info](vehicle-journey-details-definitions-point-call-properties-stop-point-info-1.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-stop-point-info-1.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/replacedStopPoint")
 
 #### replacedStopPoint Type
 
@@ -1145,13 +1232,15 @@ Optional. Only present if the original StopPoint is replaced. Describes the repl
 
 Optional. Planned fetcher (distributor) protected connections. A list of vehicle journeys that must wait for passengers from this vehicle journey at this stop even if it is delayed. Relevant for passenger information.
 
-
 `fetcherConnections`
 
--   is optional
--   Type: `object[]` ([Connection Info](vehicle-journey-details-definitions-point-call-properties-fetcherconnections-connection-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-fetcherconnections.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/fetcherConnections")
+*   is optional
+
+*   Type: `object[]` ([Connection Info](vehicle-journey-details-definitions-point-call-properties-fetcherconnections-connection-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-fetcherconnections.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/fetcherConnections")
 
 #### fetcherConnections Type
 
@@ -1161,13 +1250,15 @@ Optional. Planned fetcher (distributor) protected connections. A list of vehicle
 
 Optional. Planned feeder protected connections. A list of vehicle journeys that this vehicle journey should await passengers from at this stop even if the feeding journeys are delayed. Relevant for driver information.
 
-
 `feederConnections`
 
--   is optional
--   Type: `object[]` ([Connection Info](vehicle-journey-details-definitions-point-call-properties-feederconnections-connection-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-feederconnections.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/feederConnections")
+*   is optional
+
+*   Type: `object[]` ([Connection Info](vehicle-journey-details-definitions-point-call-properties-feederconnections-connection-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-point-call-properties-feederconnections.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/pointCall/properties/feederConnections")
 
 #### feederConnections Type
 
@@ -1181,25 +1272,27 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo"}
 ```
 
-| Property                                      | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                            |
-| :-------------------------------------------- | --------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ref](#ref-1)                                 | `string`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/ref")                                   |
-| [isTimingPoint](#istimingpoint)               | `boolean` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-istimingpoint.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/isTimingPoint")               |
-| [location](#location)                         | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-position.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/location")                         |
-| [distanceFromPrevious](#distancefromprevious) | `number`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-distancefromprevious.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/distanceFromPrevious") |
-| [tariffZones](#tariffzones)                   | `array`   | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-tariffzones.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/tariffZones")                   |
+| Property                                      | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                       |
+| :-------------------------------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ref](#ref-1)                                 | `string`  | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/ref")                                   |
+| [isTimingPoint](#istimingpoint)               | `boolean` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-istimingpoint.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/isTimingPoint")               |
+| [location](#location)                         | `object`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-position.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/location")                         |
+| [distanceFromPrevious](#distancefromprevious) | `number`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-distancefromprevious.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/distanceFromPrevious") |
+| [tariffZones](#tariffzones)                   | `array`   | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-tariffzones.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/tariffZones")                   |
 
 ### ref
 
 Id of journey pattern point.
 
-
 `ref`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/ref")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/ref")
 
 #### ref Type
 
@@ -1209,13 +1302,15 @@ Id of journey pattern point.
 
 Boolean that indicates if this is a point where the driver should respect the departure time.
 
-
 `isTimingPoint`
 
--   is required
--   Type: `boolean`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-istimingpoint.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/isTimingPoint")
+*   is required
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-istimingpoint.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/isTimingPoint")
 
 #### isTimingPoint Type
 
@@ -1235,13 +1330,15 @@ Boolean that indicates if this is a point where the driver should respect the de
 
 Optional. The position of the point in Latitude/Longitude.
 
-
 `location`
 
--   is optional
--   Type: `object` ([Position](vehicle-journey-details-definitions-journey-pattern-point-info-properties-position.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-position.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/location")
+*   is optional
+
+*   Type: `object` ([Position](vehicle-journey-details-definitions-journey-pattern-point-info-properties-position.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-position.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/location")
 
 #### location Type
 
@@ -1251,13 +1348,15 @@ Optional. The position of the point in Latitude/Longitude.
 
 Optional. Meters from previous point. The first call has the value zero.
 
-
 `distanceFromPrevious`
 
--   is optional
--   Type: `number`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-distancefromprevious.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/distanceFromPrevious")
+*   is optional
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-distancefromprevious.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/distanceFromPrevious")
 
 #### distanceFromPrevious Type
 
@@ -1267,13 +1366,15 @@ Optional. Meters from previous point. The first call has the value zero.
 
 Optional. Tariff Zones valid for this point.
 
-
 `tariffZones`
 
--   is optional
--   Type: `object[]` ([Tariff Zone Info](vehicle-journey-details-definitions-journey-pattern-point-info-properties-tariffzones-tariff-zone-info.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-tariffzones.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/tariffZones")
+*   is optional
+
+*   Type: `object[]` ([Tariff Zone Info](vehicle-journey-details-definitions-journey-pattern-point-info-properties-tariffzones-tariff-zone-info.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-journey-pattern-point-info-properties-tariffzones.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/journeyPatternPointInfo/properties/tariffZones")
 
 #### tariffZones Type
 
@@ -1287,22 +1388,24 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position"}
 ```
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
-| :---------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [latitude](#latitude)   | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-latitude.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/latitude")   |
-| [longitude](#longitude) | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-longitude.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/longitude") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                |
+| :---------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [latitude](#latitude)   | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-latitude.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/latitude")   |
+| [longitude](#longitude) | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-longitude.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/longitude") |
 
 ### latitude
 
 The latitude in decimal degrees.
 
-
 `latitude`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-latitude.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/latitude")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-latitude.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/latitude")
 
 #### latitude Type
 
@@ -1312,13 +1415,15 @@ The latitude in decimal degrees.
 
 The longitude in decimal degrees.
 
-
 `longitude`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-longitude.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/longitude")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-position-properties-longitude.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/position/properties/longitude")
 
 #### longitude Type
 
@@ -1332,23 +1437,25 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo"}
 ```
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
-| :------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ref](#ref-2)             | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/ref")             |
-| [name](#name-5)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/name")           |
-| [shortName](#shortname-3) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/shortName") |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                          |
+| :------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ref](#ref-2)             | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/ref")             |
+| [name](#name-5)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/name")           |
+| [shortName](#shortname-3) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/shortName") |
 
 ### ref
 
 Id of the Stop Area.
 
-
 `ref`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/ref")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/ref")
 
 #### ref Type
 
@@ -1358,13 +1465,15 @@ Id of the Stop Area.
 
 Full name. Max 50 characters.
 
-
 `name`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/name")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/name")
 
 #### name Type
 
@@ -1374,13 +1483,15 @@ Full name. Max 50 characters.
 
 Optional. Shortened name. Max 16 characters.
 
-
 `shortName`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/shortName")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-area-info-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopAreaInfo/properties/shortName")
 
 #### shortName Type
 
@@ -1394,27 +1505,29 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo"}
 ```
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                         |
-| :------------------------------ | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ref](#ref-3)                   | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/ref")                     |
-| [name](#name-6)                 | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/name")                   |
-| [shortName](#shortname-4)       | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/shortName")         |
-| [designation](#designation-1)   | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-designation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/designation")     |
-| [localNumber](#localnumber)     | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-localnumber.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/localNumber")     |
-| [length](#length)               | `number` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-length.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/length")               |
-| [stopPointKeys](#stoppointkeys) | `array`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-stoppointkeys.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/stopPointKeys") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
+| :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [ref](#ref-3)                   | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/ref")                     |
+| [name](#name-6)                 | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/name")                   |
+| [shortName](#shortname-4)       | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/shortName")         |
+| [designation](#designation-1)   | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-designation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/designation")     |
+| [localNumber](#localnumber)     | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-localnumber.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/localNumber")     |
+| [length](#length)               | `number` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-length.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/length")               |
+| [stopPointKeys](#stoppointkeys) | `array`  | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-stoppointkeys.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/stopPointKeys") |
 
 ### ref
 
 Id of the Stop Area.
 
-
 `ref`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/ref")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/ref")
 
 #### ref Type
 
@@ -1424,13 +1537,15 @@ Id of the Stop Area.
 
 Full name. Max 50 characters.
 
-
 `name`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/name")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/name")
 
 #### name Type
 
@@ -1440,13 +1555,15 @@ Full name. Max 50 characters.
 
 Optional. Shortened name. Max 16 characters.
 
-
 `shortName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-shortname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/shortName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-shortname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/shortName")
 
 #### shortName Type
 
@@ -1456,13 +1573,15 @@ Optional. Shortened name. Max 16 characters.
 
 Optional. Track, gate, stop etc. as shown to the public. This is for local orientation within a stop area, bus terminal or station.
 
-
 `designation`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-designation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/designation")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-designation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/designation")
 
 #### designation Type
 
@@ -1472,13 +1591,15 @@ Optional. Track, gate, stop etc. as shown to the public. This is for local orien
 
 The display order of stops within a stop area.
 
-
 `localNumber`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-localnumber.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/localNumber")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-localnumber.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/localNumber")
 
 #### localNumber Type
 
@@ -1488,13 +1609,15 @@ The display order of stops within a stop area.
 
 Optional. The stops capacity in meters.
 
-
 `length`
 
--   is optional
--   Type: `number`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-length.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/length")
+*   is optional
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-length.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/length")
 
 #### length Type
 
@@ -1504,13 +1627,15 @@ Optional. The stops capacity in meters.
 
 Optional. Array with point specific information.
 
-
 `stopPointKeys`
 
--   is optional
--   Type: `object[]` ([Key](vehicle-journey-details-definitions-stop-point-info-properties-stoppointkeys-key.md))
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-stoppointkeys.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/stopPointKeys")
+*   is optional
+
+*   Type: `object[]` ([Key](vehicle-journey-details-definitions-stop-point-info-properties-stoppointkeys-key.md))
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-stop-point-info-properties-stoppointkeys.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/stopPointInfo/properties/stopPointKeys")
 
 #### stopPointKeys Type
 
@@ -1524,22 +1649,24 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival"}
 ```
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
-| :-------------------------------- | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [latestDateTime](#latestdatetime) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-latestdatetime.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/latestDateTime") |
-| [arrivalType](#arrivaltype)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-arrivaltype.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/arrivalType")       |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                        |
+| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [latestDateTime](#latestdatetime) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-latestdatetime.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/latestDateTime") |
+| [arrivalType](#arrivaltype)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-arrivaltype.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/arrivalType")       |
 
 ### latestDateTime
 
 The latest arrival time expected according to original plan. Arrival after this time is LATE. ISO 8601, UTC.
 
-
 `latestDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-latestdatetime.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/latestDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-latestdatetime.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/latestDateTime")
 
 #### latestDateTime Type
 
@@ -1549,13 +1676,15 @@ The latest arrival time expected according to original plan. Arrival after this 
 
 Usage of the arrival according to original plan. NoStop and StopNoBoarding means that the departure should NOT be presented public.
 
-
 `arrivalType`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-arrivaltype.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/arrivalType")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-arrival-properties-arrivaltype.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/arrival/properties/arrivalType")
 
 #### arrivalType Type
 
@@ -1569,22 +1698,24 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure"}
 ```
 
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
-| :------------------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [earliestDateTime](#earliestdatetime) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-earliestdatetime.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/earliestDateTime") |
-| [departureType](#departuretype)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-departuretype.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/departureType")       |
+| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
+| :------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [earliestDateTime](#earliestdatetime) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-earliestdatetime.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/earliestDateTime") |
+| [departureType](#departuretype)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-departuretype.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/departureType")       |
 
 ### earliestDateTime
 
 The earliest permitted departure time according to original plan. Departure before this time is EARLY. ISO 8601, UTC.
 
-
 `earliestDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-earliestdatetime.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/earliestDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-earliestdatetime.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/earliestDateTime")
 
 #### earliestDateTime Type
 
@@ -1594,13 +1725,15 @@ The earliest permitted departure time according to original plan. Departure befo
 
 Usage of the departure according to original plan. NoStop and StopNoAlighting means that the arrival should NOT be presented public.
 
-
 `departureType`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-departuretype.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/departureType")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-departure-properties-departuretype.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/departure/properties/departureType")
 
 #### departureType Type
 
@@ -1614,24 +1747,26 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo"}
 ```
 
-| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
-| :------------------ | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ref](#ref-4)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/ref")       |
-| [code](#code-1)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-code.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/code")     |
-| [name](#name-7)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/name")     |
-| [number](#number-1) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-number.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/number") |
+| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
+| :------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ref](#ref-4)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/ref")       |
+| [code](#code-1)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-code.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/code")     |
+| [name](#name-7)     | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/name")     |
+| [number](#number-1) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-number.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/number") |
 
 ### ref
 
 A unique identifier.
 
-
 `ref`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/ref")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/ref")
 
 #### ref Type
 
@@ -1641,13 +1776,15 @@ A unique identifier.
 
 Short abbreviation.
 
-
 `code`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-code.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/code")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-code.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/code")
 
 #### code Type
 
@@ -1657,13 +1794,15 @@ Short abbreviation.
 
 Full name.
 
-
 `name`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/name")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/name")
 
 #### name Type
 
@@ -1673,13 +1812,15 @@ Full name.
 
 The number of the object that the organisation info refers to. Transport Authority number or Contractor Number.
 
-
 `number`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-number.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/number")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-organisation-info-properties-number.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/organisationInfo/properties/number")
 
 #### number Type
 
@@ -1693,23 +1834,25 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key"}
 ```
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
-| :------------------------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [deviceName](#devicename)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-devicename.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/deviceName")       |
-| [typeCode](#typecode)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-typecode.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/typeCode")           |
-| [parameterData](#parameterdata) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-parameterdata.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/parameterData") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                              |
+| :------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [deviceName](#devicename)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-devicename.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/deviceName")       |
+| [typeCode](#typecode)           | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-typecode.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/typeCode")           |
+| [parameterData](#parameterdata) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-parameterdata.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/parameterData") |
 
 ### deviceName
 
 Name of devices for which this key applies.
 
-
 `deviceName`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-devicename.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/deviceName")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-devicename.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/deviceName")
 
 #### deviceName Type
 
@@ -1719,13 +1862,15 @@ Name of devices for which this key applies.
 
 Name of data type.
 
-
 `typeCode`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-typecode.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/typeCode")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-typecode.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/typeCode")
 
 #### typeCode Type
 
@@ -1735,13 +1880,15 @@ Name of data type.
 
 The data formatted in an agreed (that could be customer specific) format for the specified DeviceName and TypeCode.
 
-
 `parameterData`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-parameterdata.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/parameterData")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-key-properties-parameterdata.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/key/properties/parameterData")
 
 #### parameterData Type
 
@@ -1755,24 +1902,26 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo"}
 ```
 
-| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
-| :------------------ | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ref](#ref-5)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/ref")       |
-| [number](#number-2) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-number.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/number") |
-| [code](#code-2)     | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-code.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/code")     |
-| [name](#name-8)     | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/name")     |
+| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                        |
+| :------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [ref](#ref-5)       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/ref")       |
+| [number](#number-2) | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-number.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/number") |
+| [code](#code-2)     | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-code.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/code")     |
+| [name](#name-8)     | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/name")     |
 
 ### ref
 
 A unique identifier.
 
-
 `ref`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-ref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/ref")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-ref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/ref")
 
 #### ref Type
 
@@ -1782,13 +1931,15 @@ A unique identifier.
 
 The number of the tariff zone unique within the transport authority.
 
-
 `number`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-number.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/number")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-number.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/number")
 
 #### number Type
 
@@ -1798,13 +1949,15 @@ The number of the tariff zone unique within the transport authority.
 
 Optional. Short abbreviation.
 
-
 `code`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-code.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/code")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-code.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/code")
 
 #### code Type
 
@@ -1814,13 +1967,15 @@ Optional. Short abbreviation.
 
 Optional. Full name.
 
-
 `name`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-name.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/name")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-tariff-zone-info-properties-name.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/tariffZoneInfo/properties/name")
 
 #### name Type
 
@@ -1834,29 +1989,31 @@ Reference this group by using
 {"$ref":"https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo"}
 ```
 
-| Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                |
-| :---------------------------------------------------- | -------- | -------- | -------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [connectionRef](#connectionref)                       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-connectionref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/connectionRef")                       |
-| [transportModeCode](#transportmodecode-1)             | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-transportmodecode.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/transportModeCode")               |
-| [lineAuthorityCode](#lineauthoritycode)               | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-lineauthoritycode.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineAuthorityCode")               |
-| [lineDesignation](#linedesignation-1)                 | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-linedesignation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineDesignation")                   |
-| [directionName](#directionname)                       | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-directionname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/directionName")                       |
-| [stopAreaName](#stopareaname)                         | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stopareaname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopAreaName")                         |
-| [stopPointDesignation](#stoppointdesignation)         | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stoppointdesignation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopPointDesignation")         |
-| [minChangeDurationSeconds](#minchangedurationseconds) | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-minchangedurationseconds.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/minChangeDurationSeconds") |
-| [maxWaitingUntilTime](#maxwaitinguntiltime)           | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-maxwaitinguntiltime.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/maxWaitingUntilTime")           |
+| Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                           |
+| :---------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [connectionRef](#connectionref)                       | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-connectionref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/connectionRef")                       |
+| [transportModeCode](#transportmodecode-1)             | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-transportmodecode.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/transportModeCode")               |
+| [lineAuthorityCode](#lineauthoritycode)               | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-lineauthoritycode.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineAuthorityCode")               |
+| [lineDesignation](#linedesignation-1)                 | `string` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-linedesignation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineDesignation")                   |
+| [directionName](#directionname)                       | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-directionname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/directionName")                       |
+| [stopAreaName](#stopareaname)                         | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stopareaname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopAreaName")                         |
+| [stopPointDesignation](#stoppointdesignation)         | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stoppointdesignation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopPointDesignation")         |
+| [minChangeDurationSeconds](#minchangedurationseconds) | `number` | Required | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-minchangedurationseconds.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/minChangeDurationSeconds") |
+| [maxWaitingUntilTime](#maxwaitinguntiltime)           | `string` | Optional | cannot be null | [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-maxwaitinguntiltime.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/maxWaitingUntilTime")           |
 
 ### connectionRef
 
 Identifier used for matching with real-time data in later stage. Is unique in scope of current vehicle journey and call sequenceNumber. Typically has the value of the connecting journeys directionOfLineRef.
 
-
 `connectionRef`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-connectionref.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/connectionRef")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-connectionref.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/connectionRef")
 
 #### connectionRef Type
 
@@ -1866,13 +2023,15 @@ Identifier used for matching with real-time data in later stage. Is unique in sc
 
 The transport mode. Possible values in examples.
 
-
 `transportModeCode`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-transportmodecode.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/transportModeCode")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-transportmodecode.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/transportModeCode")
 
 #### transportModeCode Type
 
@@ -1892,13 +2051,15 @@ The transport mode. Possible values in examples.
 
 Short abbreviation for the organisation providing the connecting journey. Possible values in examples.
 
-
 `lineAuthorityCode`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-lineauthoritycode.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineAuthorityCode")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-lineauthoritycode.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineAuthorityCode")
 
 #### lineAuthorityCode Type
 
@@ -1922,13 +2083,15 @@ Short abbreviation for the organisation providing the connecting journey. Possib
 
 The public line number displayed to passengers for the connecting journey. Observe that this value can be alphanumeric!
 
-
 `lineDesignation`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-linedesignation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineDesignation")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-linedesignation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/lineDesignation")
 
 #### lineDesignation Type
 
@@ -1938,13 +2101,15 @@ The public line number displayed to passengers for the connecting journey. Obser
 
 Optional. Name of direction for connecting journey.
 
-
 `directionName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-directionname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/directionName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-directionname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/directionName")
 
 #### directionName Type
 
@@ -1954,13 +2119,15 @@ Optional. Name of direction for connecting journey.
 
 Optional. Name of stop for the connecting journey. Only included if different stop than the stop this vehicle stops at.
 
-
 `stopAreaName`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stopareaname.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopAreaName")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stopareaname.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopAreaName")
 
 #### stopAreaName Type
 
@@ -1970,13 +2137,15 @@ Optional. Name of stop for the connecting journey. Only included if different st
 
 Optional. Platform/track/gate number or letter as shown to the public for the stop of the connecting journey. This is for local orientation within a stop area, bus terminal or station.
 
-
 `stopPointDesignation`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stoppointdesignation.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopPointDesignation")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-stoppointdesignation.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/stopPointDesignation")
 
 #### stopPointDesignation Type
 
@@ -1986,13 +2155,15 @@ Optional. Platform/track/gate number or letter as shown to the public for the st
 
 The minimum number of seconds needed to transfer (walk) between the involved vehicles. May need to be multiplied by some factors depending on different passenger abilities.
 
-
 `minChangeDurationSeconds`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-minchangedurationseconds.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/minChangeDurationSeconds")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-minchangedurationseconds.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/minChangeDurationSeconds")
 
 #### minChangeDurationSeconds Type
 
@@ -2002,13 +2173,15 @@ The minimum number of seconds needed to transfer (walk) between the involved veh
 
 Optional. The date and time when the connection guarantee ends. The fetcher vehicle may leave at this time even if feeder vehicle has not yet arrived. ISO 8601, UTC.
 
-
 `maxWaitingUntilTime`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-maxwaitinguntiltime.md "https&#x3A;//schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/maxWaitingUntilTime")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [VehicleJourneyDetails](vehicle-journey-details-definitions-connection-info-properties-maxwaitinguntiltime.md "https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/vehicle-journey-details.json#/definitions/connectionInfo/properties/maxWaitingUntilTime")
 
 #### maxWaitingUntilTime Type
 

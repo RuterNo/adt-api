@@ -2,7 +2,7 @@
  
 MQTT topic                                          | Retain   | QoS 
 | :------------------------------------------------ | -------- | -------- |
-```ruter/{PTO}/{vehicleID}/sensors/telemetry```  | ```false``` | ```0```
+```ruter/{PTO}/{vehicleID}/sensors/telemetry/{sensorID}```  | ```false``` | ```0```
 
 Several different kinds of sensor/telemetry data are available varying by vehicle type For traditional busses, FMS is the standard that defines what data about the vehicle is published on the FMS bus and further on by ITxPT FMStoIP [service.In](http://service.In "http://service.In") addition, vessels, trams and different bus types have proprietary data not captured by FMS.
 
@@ -53,9 +53,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/sensor/telemetry.json
 
 
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                  |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | --------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [telemetry.json](../../schema/sensor/telemetry.json "open original schema") |
 
 ## Telemetry Type
@@ -111,25 +110,27 @@ https://schemas.ruter.no/adt/ota/api/v2.1/sensor/telemetry.json
 
 # Telemetry Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                    |
-| :-------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------ |
-| [eventTimestamp](#eventtimestamp) | `string` | Required | cannot be null | [Telemetry](telemetry-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp") |
-| [messageNumber](#messagenumber)   | `number` | Optional | cannot be null | [Telemetry](telemetry-properties-messagenumber.md "\#/properties/messageNumber#/properties/messageNumber")    |
-| [id](#id)                         | `string` | Required | cannot be null | [Telemetry](telemetry-properties-id.md "\#/properties/id#/properties/id")                                     |
-| [payloads](#payloads)             | `array`  | Required | cannot be null | [Telemetry](telemetry-properties-payloads.md "\#/properties/payloads#/properties/payloads")                   |
-| Additional Properties             | Any      | Optional | can be null    |                                                                                                               |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                   |
+| :-------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------- |
+| [eventTimestamp](#eventtimestamp) | `string` | Required | cannot be null | [Telemetry](telemetry-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp") |
+| [messageNumber](#messagenumber)   | `number` | Optional | cannot be null | [Telemetry](telemetry-properties-messagenumber.md "#/properties/messageNumber#/properties/messageNumber")    |
+| [id](#id)                         | `string` | Required | cannot be null | [Telemetry](telemetry-properties-id.md "#/properties/id#/properties/id")                                     |
+| [payloads](#payloads)             | `array`  | Required | cannot be null | [Telemetry](telemetry-properties-payloads.md "#/properties/payloads#/properties/payloads")                   |
+| Additional Properties             | Any      | Optional | can be null    |                                                                                                              |
 
 ## eventTimestamp
 
 ISO 8601, UTC.
 
-
 `eventTimestamp`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [Telemetry](telemetry-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Telemetry](telemetry-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp")
 
 ### eventTimestamp Type
 
@@ -139,16 +140,17 @@ ISO 8601, UTC.
 
 Optional. Sequence number, increased by one for each new message. Used to validate consistency in the data stream.
 
-
 > Added in version 2.1
->
 
 `messageNumber`
 
--   is optional
--   Type: `number`
--   cannot be null
--   defined in: [Telemetry](telemetry-properties-messagenumber.md "\#/properties/messageNumber#/properties/messageNumber")
+*   is optional
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [Telemetry](telemetry-properties-messagenumber.md "#/properties/messageNumber#/properties/messageNumber")
 
 ### messageNumber Type
 
@@ -158,13 +160,15 @@ Optional. Sequence number, increased by one for each new message. Used to valida
 
 Eight digit hex as defined above.
 
-
 `id`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [Telemetry](telemetry-properties-id.md "\#/properties/id#/properties/id")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Telemetry](telemetry-properties-id.md "#/properties/id#/properties/id")
 
 ### id Type
 
@@ -174,13 +178,15 @@ Eight digit hex as defined above.
 
 If FMS data or accelerometry, one payload per SPN. Else, one payload.
 
-
 `payloads`
 
--   is required
--   Type: `object[]` ([Details](telemetry-properties-payloads-items.md))
--   cannot be null
--   defined in: [Telemetry](telemetry-properties-payloads.md "\#/properties/payloads#/properties/payloads")
+*   is required
+
+*   Type: `object[]` ([Details](telemetry-properties-payloads-items.md))
+
+*   cannot be null
+
+*   defined in: [Telemetry](telemetry-properties-payloads.md "#/properties/payloads#/properties/payloads")
 
 ### payloads Type
 

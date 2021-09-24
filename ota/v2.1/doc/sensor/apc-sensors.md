@@ -2,7 +2,7 @@
  
 MQTT topic                                          | Retain   | QoS 
 | :------------------------------------------------ | -------- | -------- |
-```ruter/{PTO}/{vehicleID}/sensors/apc_sensors```  | ```true``` | ```1```
+```ruter/{PTO}/{vehicleID}/sensors/apc_sensors/{sensorID}```  | ```true``` | ```1```
 
 # ApcSensors Schema
 
@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/sensor/apc-sensors.json
 
 Raw-data from door-sensor for later evaluation.
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [apc-sensors.json](../../schema/sensor/apc-sensors.json "open original schema") |
 
 ## ApcSensors Type
@@ -47,27 +46,29 @@ Raw-data from door-sensor for later evaluation.
 
 # ApcSensors Properties
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                   |
-| :---------------------------------------- | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------- |
-| [doorRef](#doorref)                       | `string` | Required | cannot be null | [ApcSensors](apc-sensors-properties-doorref.md "\#/properties/doorRef#/properties/doorRef")                                  |
-| [alightingCount](#alightingcount)         | `number` | Required | cannot be null | [ApcSensors](apc-sensors-properties-alightingcount.md "\#/properties/alightingCount#/properties/alightingCount")             |
-| [boardingCount](#boardingcount)           | `number` | Required | cannot be null | [ApcSensors](apc-sensors-properties-boardingcount.md "\#/properties/alightingCount#/properties/boardingCount")               |
-| [atDateTime](#atdatetime)                 | `string` | Required | cannot be null | [ApcSensors](apc-sensors-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")                         |
-| [messageNumber](#messagenumber)           | `number` | Optional | cannot be null | [ApcSensors](apc-sensors-properties-messagenumber.md "\#/properties/messageNumber#/properties/messageNumber")                |
-| [categoryActivities](#categoryactivities) | `array`  | Required | cannot be null | [ApcSensors](apc-sensors-properties-categoryactivities.md "\#/properties/categoryActivities#/properties/categoryActivities") |
-| Additional Properties                     | Any      | Optional | can be null    |                                                                                                                              |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                  |
+| :---------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------- |
+| [doorRef](#doorref)                       | `string` | Required | cannot be null | [ApcSensors](apc-sensors-properties-doorref.md "#/properties/doorRef#/properties/doorRef")                                  |
+| [alightingCount](#alightingcount)         | `number` | Required | cannot be null | [ApcSensors](apc-sensors-properties-alightingcount.md "#/properties/alightingCount#/properties/alightingCount")             |
+| [boardingCount](#boardingcount)           | `number` | Required | cannot be null | [ApcSensors](apc-sensors-properties-boardingcount.md "#/properties/alightingCount#/properties/boardingCount")               |
+| [atDateTime](#atdatetime)                 | `string` | Required | cannot be null | [ApcSensors](apc-sensors-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")                         |
+| [messageNumber](#messagenumber)           | `number` | Optional | cannot be null | [ApcSensors](apc-sensors-properties-messagenumber.md "#/properties/messageNumber#/properties/messageNumber")                |
+| [categoryActivities](#categoryactivities) | `array`  | Required | cannot be null | [ApcSensors](apc-sensors-properties-categoryactivities.md "#/properties/categoryActivities#/properties/categoryActivities") |
+| Additional Properties                     | Any      | Optional | can be null    |                                                                                                                             |
 
 ## doorRef
 
 Stable alfa-numeric reference that is unique within scope of vehicle (vehicle element/train set). Could be a door-number or a combination of coach number and door number.
 
-
 `doorRef`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [ApcSensors](apc-sensors-properties-doorref.md "\#/properties/doorRef#/properties/doorRef")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [ApcSensors](apc-sensors-properties-doorref.md "#/properties/doorRef#/properties/doorRef")
 
 ### doorRef Type
 
@@ -77,13 +78,15 @@ Stable alfa-numeric reference that is unique within scope of vehicle (vehicle el
 
 Accumulated number of alighting passengers detected by this sensor since last reset.
 
-
 `alightingCount`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [ApcSensors](apc-sensors-properties-alightingcount.md "\#/properties/alightingCount#/properties/alightingCount")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [ApcSensors](apc-sensors-properties-alightingcount.md "#/properties/alightingCount#/properties/alightingCount")
 
 ### alightingCount Type
 
@@ -93,13 +96,15 @@ Accumulated number of alighting passengers detected by this sensor since last re
 
 Accumulated number of boarding passengers detected by this sensor since last reset.
 
-
 `boardingCount`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [ApcSensors](apc-sensors-properties-boardingcount.md "\#/properties/alightingCount#/properties/boardingCount")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [ApcSensors](apc-sensors-properties-boardingcount.md "#/properties/alightingCount#/properties/boardingCount")
 
 ### boardingCount Type
 
@@ -109,13 +114,15 @@ Accumulated number of boarding passengers detected by this sensor since last res
 
 ISO 8601. Reflects the current UTC time.
 
-
 `atDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [ApcSensors](apc-sensors-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [ApcSensors](apc-sensors-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")
 
 ### atDateTime Type
 
@@ -125,16 +132,17 @@ ISO 8601. Reflects the current UTC time.
 
 Optional. Sequence number, increased by one for each new message. Used to validate consistency in the data stream.
 
-
 > Added in version 2.1
->
 
 `messageNumber`
 
--   is optional
--   Type: `number`
--   cannot be null
--   defined in: [ApcSensors](apc-sensors-properties-messagenumber.md "\#/properties/messageNumber#/properties/messageNumber")
+*   is optional
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [ApcSensors](apc-sensors-properties-messagenumber.md "#/properties/messageNumber#/properties/messageNumber")
 
 ### messageNumber Type
 
@@ -144,13 +152,15 @@ Optional. Sequence number, increased by one for each new message. Used to valida
 
 A list describing APC activity at each individual door divided per handled object category.
 
-
 `categoryActivities`
 
--   is required
--   Type: `object[]` ([Details](apc-sensors-properties-categoryactivities-items.md))
--   cannot be null
--   defined in: [ApcSensors](apc-sensors-properties-categoryactivities.md "\#/properties/categoryActivities#/properties/categoryActivities")
+*   is required
+
+*   Type: `object[]` ([Details](apc-sensors-properties-categoryactivities-items.md))
+
+*   cannot be null
+
+*   defined in: [ApcSensors](apc-sensors-properties-categoryactivities.md "#/properties/categoryActivities#/properties/categoryActivities")
 
 ### categoryActivities Type
 
