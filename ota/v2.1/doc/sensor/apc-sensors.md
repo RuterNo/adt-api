@@ -2,7 +2,7 @@
  
 MQTT topic                                          | Retain   | QoS 
 | :------------------------------------------------ | -------- | -------- |
-```ruter/{PTO}/{vehicleID}/sensors/apc_sensors```  | ```true``` | ```1```
+```ruter/{PTO}/{vehicleID}/sensors/apc_sensors/{sensorID}```  | ```true``` | ```1```
 
 # ApcSensors Schema
 

@@ -49,15 +49,28 @@ Tram Only
 
 Used to keep track of what direction the train is driving
 
+
 ### Sensor
+
 #### Stop Button
-Added field `messageNumber
+
+Added field `messageNumber`
+
 #### Odometer
+
 Added field `messageNumber`
+
 #### Telemetry
-Added field `messageNumber`
+
+- Added field `messageNumber`.
+- `{sensorID}` is now specified as part of the topic name.
+
 #### APC Sensors
-Added field `messageNumber`
+
+- Added field `messageNumber`.
+- `{sensorID}` is now specified as part of the topic name.
+
+
 #### Location
 - Altered description∫
 - Added field `messageNumber`
