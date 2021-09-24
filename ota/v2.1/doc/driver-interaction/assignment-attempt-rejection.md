@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/driver-interaction/assignment-attempt-
 
 Describes a negative result from the back-office of an attempt to sign on or off a block from MADT or another GUI
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                    |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [assignment-attempt-rejection.json](../../schema/driver-interaction/assignment-attempt-rejection.json "open original schema") |
 
 ## AssignmentAttemptRejection Type
@@ -34,25 +33,27 @@ Describes a negative result from the back-office of an attempt to sign on or off
 
 # AssignmentAttemptRejection Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                  |
-| :---------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| [fromDateTime](#fromdatetime) | `string` | Required | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-fromdatetime.md "\#/properties/fromDateTime#/properties/fromDateTime") |
-| [blockRef](#blockref)         | `string` | Optional | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-blockref.md "\#/properties/blockRef#/properties/blockRef")             |
-| [result](#result)             | `string` | Required | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-result.md "\#/properties/result#/properties/result")                   |
-| [errorText](#errortext)       | `string` | Optional | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-errortext.md "\#/properties/errorText#/properties/errorText")          |
-| Additional Properties         | Any      | Optional | can be null    |                                                                                                                                             |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                 |
+| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| [fromDateTime](#fromdatetime) | `string` | Required | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-fromdatetime.md "#/properties/fromDateTime#/properties/fromDateTime") |
+| [blockRef](#blockref)         | `string` | Optional | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-blockref.md "#/properties/blockRef#/properties/blockRef")             |
+| [result](#result)             | `string` | Required | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-result.md "#/properties/result#/properties/result")                   |
+| [errorText](#errortext)       | `string` | Optional | cannot be null | [AssignmentAttemptRejection](assignment-attempt-rejection-properties-errortext.md "#/properties/errorText#/properties/errorText")          |
+| Additional Properties         | Any      | Optional | can be null    |                                                                                                                                            |
 
 ## fromDateTime
 
 Time from which the sign on/off was supposed to apply. ISO 8601, UTC
 
-
 `fromDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-fromdatetime.md "\#/properties/fromDateTime#/properties/fromDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-fromdatetime.md "#/properties/fromDateTime#/properties/fromDateTime")
 
 ### fromDateTime Type
 
@@ -62,13 +63,15 @@ Time from which the sign on/off was supposed to apply. ISO 8601, UTC
 
 Optional. Not provided for sign off. Otherwise the Block identifier.
 
-
 `blockRef`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-blockref.md "\#/properties/blockRef#/properties/blockRef")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-blockref.md "#/properties/blockRef#/properties/blockRef")
 
 ### blockRef Type
 
@@ -78,13 +81,15 @@ Optional. Not provided for sign off. Otherwise the Block identifier.
 
 Possible values listed in examples
 
-
 `result`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-result.md "\#/properties/result#/properties/result")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-result.md "#/properties/result#/properties/result")
 
 ### result Type
 
@@ -124,13 +129,15 @@ Possible values listed in examples
 
 Optional. Only provided if there is an error text.
 
-
 `errorText`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-errortext.md "\#/properties/errorText#/properties/errorText")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [AssignmentAttemptRejection](assignment-attempt-rejection-properties-errortext.md "#/properties/errorText#/properties/errorText")
 
 ### errorText Type
 

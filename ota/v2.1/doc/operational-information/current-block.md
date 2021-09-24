@@ -14,9 +14,8 @@ Normally this topic indicates which block this vehicle is currently signed on to
 
 Note that if a ruter/{PTO}/{vehicleID}/di/assignment_attempt/block is not answered by the back-office within a configured duration it is assumed that contact is lost with the control centre and then the proposed block will be accepted and exposed on this topic.
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [current-block.json](../../schema/operational-information/current-block.json "open original schema") |
 
 ## CurrentBlock Type
@@ -36,25 +35,27 @@ Note that if a ruter/{PTO}/{vehicleID}/di/assignment_attempt/block is not answer
 
 # CurrentBlock Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                     |
-| :---------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------- |
-| [fromDateTime](#fromdatetime) | `string` | Required | cannot be null | [CurrentBlock](current-block-properties-fromdatetime.md "\#/properties/fromDateTime#/properties/fromDateTime") |
-| [state](#state)               | `string` | Required | cannot be null | [CurrentBlock](current-block-properties-state.md "\#/properties/state#/properties/state")                      |
-| [blockRef](#blockref)         | `string` | Optional | cannot be null | [CurrentBlock](current-block-properties-blockref.md "\#/properties/blockRef#/properties/blockRef")             |
-| [operatingDay](#operatingday) | `string` | Optional | cannot be null | [CurrentBlock](current-block-properties-operatingday.md "\#/properties/operatingDay#/properties/operatingDay") |
-| Additional Properties         | Any      | Optional | can be null    |                                                                                                                |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                    |
+| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------ |
+| [fromDateTime](#fromdatetime) | `string` | Required | cannot be null | [CurrentBlock](current-block-properties-fromdatetime.md "#/properties/fromDateTime#/properties/fromDateTime") |
+| [state](#state)               | `string` | Required | cannot be null | [CurrentBlock](current-block-properties-state.md "#/properties/state#/properties/state")                      |
+| [blockRef](#blockref)         | `string` | Optional | cannot be null | [CurrentBlock](current-block-properties-blockref.md "#/properties/blockRef#/properties/blockRef")             |
+| [operatingDay](#operatingday) | `string` | Optional | cannot be null | [CurrentBlock](current-block-properties-operatingday.md "#/properties/operatingDay#/properties/operatingDay") |
+| Additional Properties         | Any      | Optional | can be null    |                                                                                                               |
 
 ## fromDateTime
 
 Time from which the sign on or assignment applies. ISO 8601, UTC.
 
-
 `fromDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [CurrentBlock](current-block-properties-fromdatetime.md "\#/properties/fromDateTime#/properties/fromDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentBlock](current-block-properties-fromdatetime.md "#/properties/fromDateTime#/properties/fromDateTime")
 
 ### fromDateTime Type
 
@@ -64,13 +65,15 @@ Time from which the sign on or assignment applies. ISO 8601, UTC.
 
 Possible values in examples.
 
-
 `state`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [CurrentBlock](current-block-properties-state.md "\#/properties/state#/properties/state")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentBlock](current-block-properties-state.md "#/properties/state#/properties/state")
 
 ### state Type
 
@@ -94,13 +97,15 @@ Possible values in examples.
 
 Not provided if not assigned or not signed on, otherwise provided as a Block identifier.
 
-
 `blockRef`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [CurrentBlock](current-block-properties-blockref.md "\#/properties/blockRef#/properties/blockRef")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentBlock](current-block-properties-blockref.md "#/properties/blockRef#/properties/blockRef")
 
 ### blockRef Type
 
@@ -110,13 +115,15 @@ Not provided if not assigned or not signed on, otherwise provided as a Block ide
 
 Not provided if not assigned, otherwise provided as the scheduled date of the block on the format “YYYY-MM-DD”. Maybe different from calendar date.
 
-
 `operatingDay`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [CurrentBlock](current-block-properties-operatingday.md "\#/properties/operatingDay#/properties/operatingDay")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentBlock](current-block-properties-operatingday.md "#/properties/operatingDay#/properties/operatingDay")
 
 ### operatingDay Type
 

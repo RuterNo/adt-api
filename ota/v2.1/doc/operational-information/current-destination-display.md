@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/current-destin
 
 
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                       |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [current-destination-display.json](../../schema/operational-information/current-destination-display.json "open original schema") |
 
 ## CurrentDestinationDisplay Type
@@ -32,26 +31,28 @@ https://schemas.ruter.no/adt/ota/api/v2.1/operational-information/current-destin
 
 # CurrentDestinationDisplay Properties
 
-| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                           |
-| :---------------------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [number](#number)                               | `number` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-number.md "\#/properties/number#/properties/number")                                              |
-| [name](#name)                                   | `string` | Required | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-name.md "\#/properties/name#/properties/name")                                                    |
-| [alternativeText](#alternativetext)             | `string` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-alternativetext.md "\#/properties/alternativeText#/properties/alternativeText")                   |
-| [lineDesignation](#linedesignation)             | `string` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-linedesignation.md "\#/properties/lineDesignation#/properties/lineDesignation")                   |
-| [typeOfAlternativeText](#typeofalternativetext) | `string` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-typeofalternativetext.md "\#/properties/typeOfAlternativeText#/properties/typeOfAlternativeText") |
-| Additional Properties                           | Any      | Optional | can be null    |                                                                                                                                                                      |
+| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                          |
+| :---------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [number](#number)                               | `number` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-number.md "#/properties/number#/properties/number")                                              |
+| [name](#name)                                   | `string` | Required | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-name.md "#/properties/name#/properties/name")                                                    |
+| [alternativeText](#alternativetext)             | `string` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-alternativetext.md "#/properties/alternativeText#/properties/alternativeText")                   |
+| [lineDesignation](#linedesignation)             | `string` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-linedesignation.md "#/properties/lineDesignation#/properties/lineDesignation")                   |
+| [typeOfAlternativeText](#typeofalternativetext) | `string` | Optional | cannot be null | [CurrentDestinationDisplay](current-destination-display-properties-typeofalternativetext.md "#/properties/typeOfAlternativeText#/properties/typeOfAlternativeText") |
+| Additional Properties                           | Any      | Optional | can be null    |                                                                                                                                                                     |
 
 ## number
 
 Optional. Numeric value representing the destination display text.
 
-
 `number`
 
--   is optional
--   Type: `number`
--   cannot be null
--   defined in: [CurrentDestinationDisplay](current-destination-display-properties-number.md "\#/properties/number#/properties/number")
+*   is optional
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [CurrentDestinationDisplay](current-destination-display-properties-number.md "#/properties/number#/properties/number")
 
 ### number Type
 
@@ -61,13 +62,15 @@ Optional. Numeric value representing the destination display text.
 
 The name of the (primary) destination or a free text.
 
-
 `name`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [CurrentDestinationDisplay](current-destination-display-properties-name.md "\#/properties/name#/properties/name")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentDestinationDisplay](current-destination-display-properties-name.md "#/properties/name#/properties/name")
 
 ### name Type
 
@@ -77,13 +80,15 @@ The name of the (primary) destination or a free text.
 
 Optional. The name of the secondary destination or an alternative (free) text.
 
-
 `alternativeText`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [CurrentDestinationDisplay](current-destination-display-properties-alternativetext.md "\#/properties/alternativeText#/properties/alternativeText")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentDestinationDisplay](current-destination-display-properties-alternativetext.md "#/properties/alternativeText#/properties/alternativeText")
 
 ### alternativeText Type
 
@@ -93,13 +98,15 @@ Optional. The name of the secondary destination or an alternative (free) text.
 
 Optional. Displayed public line number or line code.
 
-
 `lineDesignation`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [CurrentDestinationDisplay](current-destination-display-properties-linedesignation.md "\#/properties/lineDesignation#/properties/lineDesignation")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentDestinationDisplay](current-destination-display-properties-linedesignation.md "#/properties/lineDesignation#/properties/lineDesignation")
 
 ### lineDesignation Type
 
@@ -109,13 +116,15 @@ Optional. Displayed public line number or line code.
 
 Optional. The purpose of the alternative text. Possible values in examples.
 
-
 `typeOfAlternativeText`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [CurrentDestinationDisplay](current-destination-display-properties-typeofalternativetext.md "\#/properties/typeOfAlternativeText#/properties/typeOfAlternativeText")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [CurrentDestinationDisplay](current-destination-display-properties-typeofalternativetext.md "#/properties/typeOfAlternativeText#/properties/typeOfAlternativeText")
 
 ### typeOfAlternativeText Type
 

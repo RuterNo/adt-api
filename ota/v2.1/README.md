@@ -104,8 +104,8 @@ Schema                                | MQTT topic                              
 [Location](./doc/sensor/location.md) | ```ruter/{PTO}/{vehicleID}/sensors/gnss/location```  | Vehicle | Ruter Bo
 [Odometer](./doc/sensor/odometer.md) | ```ruter/{PTO}/{vehicleID}/sensors/odometer```  | Vehicle | Ruter Bo
 [Clock](./doc/sensor/clock.md) | ```sensors/clock```  | Vehicle | Vehicle, Ruter Sales
-[Apc sensors](./doc/sensor/apc-sensors.md) | ```ruter/{PTO}/{vehicleID}/sensors/apc_sensors```  | Vehicle | Ruter Bo
-[Telemetry](./doc/sensor/telemetry.md) | ```ruter/{PTO}/{vehicleID}/sensors/telemetry```  | Vehicle | Ruter Bo
+[Apc sensors](./doc/sensor/apc-sensors.md) | ```ruter/{PTO}/{vehicleID}/sensors/apc_sensors/{sensorID}```  | Vehicle | Ruter Bo
+[Telemetry](./doc/sensor/telemetry.md) | ```ruter/{PTO}/{vehicleID}/sensors/telemetry/{sensorID}```  | Vehicle | Ruter Bo
 
  --- 
 

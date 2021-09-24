@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/sensor/clock.json
 
 
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                          |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [clock.json](../../schema/sensor/clock.json "open original schema") |
 
 ## Clock Type
@@ -33,24 +32,26 @@ https://schemas.ruter.no/adt/ota/api/v2.1/sensor/clock.json
 
 # Clock Properties
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                     |
-| :-------------------------------------- | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------- |
-| [localTimeZoneDate](#localtimezonedate) | `string` | Required | cannot be null | [Clock](clock-properties-localtimezonedate.md "\#/properties/localTimeZoneDate#/properties/localTimeZoneDate") |
-| [localTimeZoneTime](#localtimezonetime) | `string` | Required | cannot be null | [Clock](clock-properties-localtimezonetime.md "\#/properties/localTimeZoneTime#/properties/localTimeZoneTime") |
-| [atDateTime](#atdatetime)               | `string` | Required | cannot be null | [Clock](clock-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")                      |
-| Additional Properties                   | Any      | Optional | can be null    |                                                                                                                |
+| Property                                | Type     | Required | Nullable       | Defined by                                                                                                    |
+| :-------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------ |
+| [localTimeZoneDate](#localtimezonedate) | `string` | Required | cannot be null | [Clock](clock-properties-localtimezonedate.md "#/properties/localTimeZoneDate#/properties/localTimeZoneDate") |
+| [localTimeZoneTime](#localtimezonetime) | `string` | Required | cannot be null | [Clock](clock-properties-localtimezonetime.md "#/properties/localTimeZoneTime#/properties/localTimeZoneTime") |
+| [atDateTime](#atdatetime)               | `string` | Required | cannot be null | [Clock](clock-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")                      |
+| Additional Properties                   | Any      | Optional | can be null    |                                                                                                               |
 
 ## localTimeZoneDate
 
-Date formatted as YYYY-MM-DD where YYYY = year MM = month [01..12] DD = day [01..31].
-
+Date formatted as YYYY-MM-DD where YYYY = year MM = month \[01..12] DD = day \[01..31].
 
 `localTimeZoneDate`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [Clock](clock-properties-localtimezonedate.md "\#/properties/localTimeZoneDate#/properties/localTimeZoneDate")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Clock](clock-properties-localtimezonedate.md "#/properties/localTimeZoneDate#/properties/localTimeZoneDate")
 
 ### localTimeZoneDate Type
 
@@ -58,15 +59,17 @@ Date formatted as YYYY-MM-DD where YYYY = year MM = month [01..12] DD = day [01.
 
 ## localTimeZoneTime
 
-Time formatted as hh:mm:ss where hh = hour [00..23] mm = minute [00..59] ss = seconds [00..59].
-
+Time formatted as hh:mm:ss where hh = hour \[00..23] mm = minute \[00..59] ss = seconds \[00..59].
 
 `localTimeZoneTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [Clock](clock-properties-localtimezonetime.md "\#/properties/localTimeZoneTime#/properties/localTimeZoneTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Clock](clock-properties-localtimezonetime.md "#/properties/localTimeZoneTime#/properties/localTimeZoneTime")
 
 ### localTimeZoneTime Type
 
@@ -76,13 +79,15 @@ Time formatted as hh:mm:ss where hh = hour [00..23] mm = minute [00..59] ss = se
 
 ISO 8601. Reflects the UTC time when the information was provided.
 
-
 `atDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [Clock](clock-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Clock](clock-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")
 
 ### atDateTime Type
 

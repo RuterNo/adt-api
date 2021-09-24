@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/proprietary-extensions/dpi-diagnostics
 
 It is expected that the DPI application itself will produce diagnostic messages. The payload is defined as an object with no structure to provide flexibility.
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                              |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [dpi-diagnostics.json](../../schema/proprietary-extensions/dpi-diagnostics.json "open original schema") |
 
 ## DPIDiagnostics Type
@@ -56,25 +55,27 @@ It is expected that the DPI application itself will produce diagnostic messages.
 
 # DPIDiagnostics Properties
 
-| Property                          | Type          | Required | Nullable       | Defined by                                                                                                               |
-| :-------------------------------- | ------------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| [eventTimestamp](#eventtimestamp) | `string`      | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp") |
-| [screenId](#screenid)             | `string`      | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-screenid.md "\#/properties/screenId#/properties/screenId")                   |
-| [type](#type)                     | `string`      | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-type.md "\#/properties/type#/properties/type")                               |
-| [payload](#payload)               | Not specified | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-payload.md "\#/properties/payload#/properties/payload")                      |
-| Additional Properties             | Any           | Optional | can be null    |                                                                                                                          |
+| Property                          | Type          | Required | Nullable       | Defined by                                                                                                              |
+| :-------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| [eventTimestamp](#eventtimestamp) | `string`      | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp") |
+| [screenId](#screenid)             | `string`      | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-screenid.md "#/properties/screenId#/properties/screenId")                   |
+| [type](#type)                     | `string`      | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-type.md "#/properties/type#/properties/type")                               |
+| [payload](#payload)               | Not specified | Required | cannot be null | [DPIDiagnostics](dpi-diagnostics-properties-payload.md "#/properties/payload#/properties/payload")                      |
+| Additional Properties             | Any           | Optional | can be null    |                                                                                                                         |
 
 ## eventTimestamp
 
 ISO 8601
 
-
 `eventTimestamp`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [DPIDiagnostics](dpi-diagnostics-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [DPIDiagnostics](dpi-diagnostics-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp")
 
 ### eventTimestamp Type
 
@@ -84,13 +85,15 @@ ISO 8601
 
 
 
-
 `screenId`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [DPIDiagnostics](dpi-diagnostics-properties-screenid.md "\#/properties/screenId#/properties/screenId")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [DPIDiagnostics](dpi-diagnostics-properties-screenid.md "#/properties/screenId#/properties/screenId")
 
 ### screenId Type
 
@@ -106,13 +109,15 @@ ISO 8601
 
 Diagnostics type
 
-
 `type`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [DPIDiagnostics](dpi-diagnostics-properties-type.md "\#/properties/type#/properties/type")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [DPIDiagnostics](dpi-diagnostics-properties-type.md "#/properties/type#/properties/type")
 
 ### type Type
 
@@ -132,13 +137,15 @@ Diagnostics type
 
 Diagnostics payload
 
-
 `payload`
 
--   is required
--   Type: unknown
--   cannot be null
--   defined in: [DPIDiagnostics](dpi-diagnostics-properties-payload.md "\#/properties/payload#/properties/payload")
+*   is required
+
+*   Type: unknown
+
+*   cannot be null
+
+*   defined in: [DPIDiagnostics](dpi-diagnostics-properties-payload.md "#/properties/payload#/properties/payload")
 
 ### payload Type
 

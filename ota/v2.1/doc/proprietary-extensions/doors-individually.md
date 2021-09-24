@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/proprietary-extensions/doors-individua
 
 This topic is used to track the individual status of doors. One use case is to improve the data quality of APC counts. See also topic sensors/door for status of anyDoorOpen/allDoorsClosed.
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                    |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [doors-individually.json](../../schema/proprietary-extensions/doors-individually.json "open original schema") |
 
 ## DoorsIndividually Type
@@ -33,24 +32,26 @@ This topic is used to track the individual status of doors. One use case is to i
 
 # DoorsIndividually Properties
 
-| Property                  | Type      | Required | Nullable       | Defined by                                                                                                         |
-| :------------------------ | --------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------- |
-| [doorRef](#doorref)       | `string`  | Required | cannot be null | [DoorsIndividually](doors-individually-properties-doorref.md "\#/properties/doorRef#/properties/doorRef")          |
-| [isOpen](#isopen)         | `boolean` | Required | cannot be null | [DoorsIndividually](doors-individually-properties-isopen.md "\#/properties/isOpen#/properties/isOpen")             |
-| [atDateTime](#atdatetime) | `string`  | Required | cannot be null | [DoorsIndividually](doors-individually-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime") |
-| Additional Properties     | Any       | Optional | can be null    |                                                                                                                    |
+| Property                  | Type      | Required | Nullable       | Defined by                                                                                                        |
+| :------------------------ | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------- |
+| [doorRef](#doorref)       | `string`  | Required | cannot be null | [DoorsIndividually](doors-individually-properties-doorref.md "#/properties/doorRef#/properties/doorRef")          |
+| [isOpen](#isopen)         | `boolean` | Required | cannot be null | [DoorsIndividually](doors-individually-properties-isopen.md "#/properties/isOpen#/properties/isOpen")             |
+| [atDateTime](#atdatetime) | `string`  | Required | cannot be null | [DoorsIndividually](doors-individually-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime") |
+| Additional Properties     | Any       | Optional | can be null    |                                                                                                                   |
 
 ## doorRef
 
 Has to be the same reference as is used in the topic sensors/apc_sensors.
 
-
 `doorRef`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [DoorsIndividually](doors-individually-properties-doorref.md "\#/properties/doorRef#/properties/doorRef")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [DoorsIndividually](doors-individually-properties-doorref.md "#/properties/doorRef#/properties/doorRef")
 
 ### doorRef Type
 
@@ -60,13 +61,15 @@ Has to be the same reference as is used in the topic sensors/apc_sensors.
 
 True if the door is open.
 
-
 `isOpen`
 
--   is required
--   Type: `boolean`
--   cannot be null
--   defined in: [DoorsIndividually](doors-individually-properties-isopen.md "\#/properties/isOpen#/properties/isOpen")
+*   is required
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [DoorsIndividually](doors-individually-properties-isopen.md "#/properties/isOpen#/properties/isOpen")
 
 ### isOpen Type
 
@@ -86,13 +89,15 @@ True if the door is open.
 
 Timestamp when isOpen has changed, ISO 8601
 
-
 `atDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [DoorsIndividually](doors-individually-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [DoorsIndividually](doors-individually-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")
 
 ### atDateTime Type
 

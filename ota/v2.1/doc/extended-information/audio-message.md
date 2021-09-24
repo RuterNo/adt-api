@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/extended-information/audio-message.jso
 
 This topic provides an audio message intended for passengers onboard the vehicle that should be played on speaker(s) defined in the speaker property of the payload.
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                        |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [audio-message.json](../../schema/extended-information/audio-message.json "open original schema") |
 
 ## AudioMessage Type
@@ -48,26 +47,28 @@ This topic provides an audio message intended for passengers onboard the vehicle
 
 # AudioMessage Properties
 
-| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                   |
-| :------------------------------------------------ | ------------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
-| [eventDateTime](#eventdatetime)                   | `string`      | Required | cannot be null | [AudioMessage](audio-message-properties-eventdatetime.md "\#/properties/eventDateTime#/properties/eventDateTime")                            |
-| [expiryDateTime](#expirydatetime)                 | `string`      | Required | cannot be null | [AudioMessage](audio-message-properties-expirydatetime.md "\#/properties/expiryDateTime#/properties/expiryDateTime")                         |
-| [preferredStartDateTime](#preferredstartdatetime) | `string`      | Required | cannot be null | [AudioMessage](audio-message-properties-preferredstartdatetime.md "\#/properties/preferredStartDateTime#/properties/preferredStartDateTime") |
-| [ref](#ref)                                       | Not specified | Required | cannot be null | [AudioMessage](audio-message-properties-ref.md "\#/properties/ref#/properties/ref")                                                          |
-| [audio](#audio)                                   | `array`       | Required | cannot be null | [AudioMessage](audio-message-properties-audio.md "\#/properties/audio#/properties/audio")                                                    |
-| Additional Properties                             | Any           | Optional | can be null    |                                                                                                                                              |
+| Property                                          | Type          | Required | Nullable       | Defined by                                                                                                                                  |
+| :------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| [eventDateTime](#eventdatetime)                   | `string`      | Required | cannot be null | [AudioMessage](audio-message-properties-eventdatetime.md "#/properties/eventDateTime#/properties/eventDateTime")                            |
+| [expiryDateTime](#expirydatetime)                 | `string`      | Required | cannot be null | [AudioMessage](audio-message-properties-expirydatetime.md "#/properties/expiryDateTime#/properties/expiryDateTime")                         |
+| [preferredStartDateTime](#preferredstartdatetime) | `string`      | Required | cannot be null | [AudioMessage](audio-message-properties-preferredstartdatetime.md "#/properties/preferredStartDateTime#/properties/preferredStartDateTime") |
+| [ref](#ref)                                       | Not specified | Required | cannot be null | [AudioMessage](audio-message-properties-ref.md "#/properties/ref#/properties/ref")                                                          |
+| [audio](#audio)                                   | `array`       | Required | cannot be null | [AudioMessage](audio-message-properties-audio.md "#/properties/audio#/properties/audio")                                                    |
+| Additional Properties                             | Any           | Optional | can be null    |                                                                                                                                             |
 
 ## eventDateTime
 
 ISO 8601, UTC
 
-
 `eventDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [AudioMessage](audio-message-properties-eventdatetime.md "\#/properties/eventDateTime#/properties/eventDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [AudioMessage](audio-message-properties-eventdatetime.md "#/properties/eventDateTime#/properties/eventDateTime")
 
 ### eventDateTime Type
 
@@ -77,13 +78,15 @@ ISO 8601, UTC
 
 Do not present this information after this time. ISO 8601, UTC
 
-
 `expiryDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [AudioMessage](audio-message-properties-expirydatetime.md "\#/properties/expiryDateTime#/properties/expiryDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [AudioMessage](audio-message-properties-expirydatetime.md "#/properties/expiryDateTime#/properties/expiryDateTime")
 
 ### expiryDateTime Type
 
@@ -93,13 +96,15 @@ Do not present this information after this time. ISO 8601, UTC
 
 ISO 8601, UTC
 
-
 `preferredStartDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [AudioMessage](audio-message-properties-preferredstartdatetime.md "\#/properties/preferredStartDateTime#/properties/preferredStartDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [AudioMessage](audio-message-properties-preferredstartdatetime.md "#/properties/preferredStartDateTime#/properties/preferredStartDateTime")
 
 ### preferredStartDateTime Type
 
@@ -109,13 +114,15 @@ ISO 8601, UTC
 
 
 
-
 `ref`
 
--   is required
--   Type: unknown
--   cannot be null
--   defined in: [AudioMessage](audio-message-properties-ref.md "\#/properties/ref#/properties/ref")
+*   is required
+
+*   Type: unknown
+
+*   cannot be null
+
+*   defined in: [AudioMessage](audio-message-properties-ref.md "#/properties/ref#/properties/ref")
 
 ### ref Type
 
@@ -125,13 +132,15 @@ unknown
 
 
 
-
 `audio`
 
--   is required
--   Type: `object[]` ([audio](audio-message-properties-audio-audio.md))
--   cannot be null
--   defined in: [AudioMessage](audio-message-properties-audio.md "\#/properties/audio#/properties/audio")
+*   is required
+
+*   Type: `object[]` ([audio](audio-message-properties-audio-audio.md))
+
+*   cannot be null
+
+*   defined in: [AudioMessage](audio-message-properties-audio.md "#/properties/audio#/properties/audio")
 
 ### audio Type
 
