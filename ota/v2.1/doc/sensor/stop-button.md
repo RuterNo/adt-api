@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/sensor/stop-button.json
 
 Describes if passengers have requested that the bus should stop (stop button pressed).
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [stop-button.json](../../schema/sensor/stop-button.json "open original schema") |
 
 ## StopButton Type
@@ -33,24 +32,26 @@ Describes if passengers have requested that the bus should stop (stop button pre
 
 # StopButton Properties
 
-| Property                        | Type      | Required | Nullable       | Defined by                                                                                                    |
-| :------------------------------ | --------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------ |
-| [stopPressed](#stoppressed)     | `boolean` | Required | cannot be null | [StopButton](stop-button-properties-stoppressed.md "\#/properties/stopPressed#/properties/stopPressed")       |
-| [atDateTime](#atdatetime)       | `string`  | Required | cannot be null | [StopButton](stop-button-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")          |
-| [messageNumber](#messagenumber) | `number`  | Optional | cannot be null | [StopButton](stop-button-properties-messagenumber.md "\#/properties/messageNumber#/properties/messageNumber") |
-| Additional Properties           | Any       | Optional | can be null    |                                                                                                               |
+| Property                        | Type      | Required | Nullable       | Defined by                                                                                                   |
+| :------------------------------ | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------- |
+| [stopPressed](#stoppressed)     | `boolean` | Required | cannot be null | [StopButton](stop-button-properties-stoppressed.md "#/properties/stopPressed#/properties/stopPressed")       |
+| [atDateTime](#atdatetime)       | `string`  | Required | cannot be null | [StopButton](stop-button-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")          |
+| [messageNumber](#messagenumber) | `number`  | Optional | cannot be null | [StopButton](stop-button-properties-messagenumber.md "#/properties/messageNumber#/properties/messageNumber") |
+| Additional Properties           | Any       | Optional | can be null    |                                                                                                              |
 
 ## stopPressed
 
 True if stop request button pressed. False if stop request signal is cleared.
 
-
 `stopPressed`
 
--   is required
--   Type: `boolean`
--   cannot be null
--   defined in: [StopButton](stop-button-properties-stoppressed.md "\#/properties/stopPressed#/properties/stopPressed")
+*   is required
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [StopButton](stop-button-properties-stoppressed.md "#/properties/stopPressed#/properties/stopPressed")
 
 ### stopPressed Type
 
@@ -70,13 +71,15 @@ True if stop request button pressed. False if stop request signal is cleared.
 
 ISO 8601. Reflects the UTC time when the state changed.
 
-
 `atDateTime`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [StopButton](stop-button-properties-atdatetime.md "\#/properties/atDateTime#/properties/atDateTime")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [StopButton](stop-button-properties-atdatetime.md "#/properties/atDateTime#/properties/atDateTime")
 
 ### atDateTime Type
 
@@ -86,16 +89,17 @@ ISO 8601. Reflects the UTC time when the state changed.
 
 Optional. Sequence number, increased by one for each new message. Used to validate consistency in the data stream.
 
-
 > Added in version 2.1
->
 
 `messageNumber`
 
--   is optional
--   Type: `number`
--   cannot be null
--   defined in: [StopButton](stop-button-properties-messagenumber.md "\#/properties/messageNumber#/properties/messageNumber")
+*   is optional
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [StopButton](stop-button-properties-messagenumber.md "#/properties/messageNumber#/properties/messageNumber")
 
 ### messageNumber Type
 

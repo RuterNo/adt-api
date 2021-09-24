@@ -12,9 +12,8 @@ https://schemas.ruter.no/adt/ota/api/v2.1/proprietary-extensions/door-lock.json
 
 This message is used to track if the tram doors are locked or unlocked.
 
-
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                  |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [door-lock.json](../../schema/proprietary-extensions/door-lock.json "open original schema") |
 
 ## DoorLock Type
@@ -32,23 +31,25 @@ This message is used to track if the tram doors are locked or unlocked.
 
 # DoorLock Properties
 
-| Property                          | Type      | Required | Nullable       | Defined by                                                                                                   |
-| :-------------------------------- | --------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------- |
-| [eventTimestamp](#eventtimestamp) | `string`  | Required | cannot be null | [DoorLock](door-lock-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp") |
-| [locked](#locked)                 | `boolean` | Required | cannot be null | [DoorLock](door-lock-properties-locked.md "\#/properties/locked#/properties/locked")                         |
-| Additional Properties             | Any       | Optional | can be null    |                                                                                                              |
+| Property                          | Type      | Required | Nullable       | Defined by                                                                                                  |
+| :-------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------- |
+| [eventTimestamp](#eventtimestamp) | `string`  | Required | cannot be null | [DoorLock](door-lock-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp") |
+| [locked](#locked)                 | `boolean` | Required | cannot be null | [DoorLock](door-lock-properties-locked.md "#/properties/locked#/properties/locked")                         |
+| Additional Properties             | Any       | Optional | can be null    |                                                                                                             |
 
 ## eventTimestamp
 
 ISO 8601, UTC
 
-
 `eventTimestamp`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [DoorLock](door-lock-properties-eventtimestamp.md "\#/properties/eventTimestamp#/properties/eventTimestamp")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [DoorLock](door-lock-properties-eventtimestamp.md "#/properties/eventTimestamp#/properties/eventTimestamp")
 
 ### eventTimestamp Type
 
@@ -58,13 +59,15 @@ ISO 8601, UTC
 
 
 
-
 `locked`
 
--   is required
--   Type: `boolean`
--   cannot be null
--   defined in: [DoorLock](door-lock-properties-locked.md "\#/properties/locked#/properties/locked")
+*   is required
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [DoorLock](door-lock-properties-locked.md "#/properties/locked#/properties/locked")
 
 ### locked Type
 

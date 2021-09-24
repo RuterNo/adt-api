@@ -14,9 +14,8 @@ It is in Ruters interest to provide a rich and dynamic personal user experience 
 
 No payload structure is defined.
 
-
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                      |
-| :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------ |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [dpi-extensions-from-vehicle.json](../../schema/proprietary-extensions/dpi-extensions-from-vehicle.json "open original schema") |
 
 ## DpiExtensionsFromVehicle Type
@@ -34,7 +33,7 @@ No payload structure is defined.
 # DpiExtensionsFromVehicle Properties
 
 | Property              | Type | Required | Nullable    | Defined by |
-| :-------------------- | ---- | -------- | ----------- | :--------- |
+| :-------------------- | :--- | :------- | :---------- | :--------- |
 | Additional Properties | Any  | Optional | can be null |            |
 
 ## Additional Properties
